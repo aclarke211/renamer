@@ -8,7 +8,14 @@ function init(appContent, $appContainer) {
 function template() {
   return `
     <div class="src-dir__container">
-      <h1 class="src-dir-text">${content.srcDir.text}</h1>
+      <div class="fields__container">
+        <div class="field">
+          <label for="src-dir-path" class="src-dir-text">${content.srcDir.text}</label>
+          <input id="src-dir-path" type="text">
+        </div>
+
+      </div>
+
     </div>
   `;
 }
