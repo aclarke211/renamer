@@ -1,16 +1,12 @@
 .header__container {
-  @include spacing;
-  border: solid blue;
+  @include flex;
 
-  @include desktop {
-    border-color: green;
-  }
+  margin: 1rem 0 2rem;
+  padding: 1rem;
 
   .header {
-    color: red;
-
-    @include desktop {
-      color: black;
-    }
+    font-size: 1.5rem;
+    border: 3px solid black;
+    padding: .75rem 2rem;
   }
 }
