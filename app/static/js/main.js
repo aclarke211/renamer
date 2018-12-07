@@ -1,6 +1,15 @@
-console.log('App Running...');
+console.log('Renamer [v1.0.0]');
 
-$.getScript('./app/static/js/components/header.js', function() {
-  header();
+const components = [{
+    name: 'header',
+  },
+  {
+    name: 'srcDirectory'
+  }
+]
+
+components.forEach((component) => {
+  $.getScript(`./app/static/js/components/${component.name}.js`, function () {
+    init();
+  });
 });
-
