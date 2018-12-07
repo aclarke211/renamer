@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const colors = require('colors');
 
 const PORT = process.env.PORT || 5555;
 
@@ -9,7 +10,7 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('index'))
   .listen(PORT, () => {
-    console.log('RENAMER started...');
-    console.log('Listening on:');
-    console.log('\x1b[36m%s\x1b[0m', `http://localhost:${PORT}`);
+    console.log(colors.black.bgGreen('RENAMER started...'));
+    console.log(colors.yellow('Listening on:'));
+    console.log(colors.cyan(`http://localhost:${PORT}`));
   });
