@@ -1,0 +1,20 @@
+.fields__container {
+
+  .field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: .5rem;
+    }
+
+    input[type="text"] {
+      border: 1px solid darkslategrey;
+      width: 20rem;
+      display: flex;
+      padding: .65rem .5rem;
+      font-size: .75rem;
+      align-items: center;
+    }
+  }
+}
