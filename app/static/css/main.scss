@@ -1,0 +1,17 @@
+@import './app/static/css/base/_mixins.scss';
+
+.header__container {
+  border: solid blue;
+
+  @include desktop {
+    border-color: green;
+  }
+
+  .header {
+    color: red;
+
+    @include desktop {
+      color: black;
+    }
+  }
+}

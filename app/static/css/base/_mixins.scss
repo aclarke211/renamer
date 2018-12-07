@@ -1,0 +1,92 @@
+// Target only mobile screen sizes
+@mixin mobile-only {
+  @media screen and (max-width: 766px) {
+    @content;
+  }
+}
+
+// Target tablet screen sizes and above
+@mixin tablet {
+  @media screen and (min-width: 767px) {
+    @content;
+  }
+}
+
+// Target only tablet screen sizes
+@mixin tablet-only {
+  @media screen and (min-width: 767px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+// Target desktop screen sizes
+@mixin desktop {
+  @media screen and (min-width: 1025px) {
+    @content;
+  }
+}
+
+// Absolutely position an element based on the string passed
+@mixin position-absolute($direction) {
+  position: absolute;
+  top: 0;
+
+  @if $direction=='left' {
+    left: 0;
+  }
+
+  @else if $direction=='right' {
+    right: 0;
+  }
+}
+
+// Turn the element into a flexbox (all content centered by default)
+@mixin flexbox {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+// Add a box shadow to element (colour passed to mixin)
+@mixin box-shadow($colour) {
+  box-shadow: -1px 3px 5px $colour;
+}
+
+// Change the colour of text when hovered (useful for UX on desktop)
+@mixin hover-text($colour, $activeColour) {
+  color: $colour;
+
+  &:hover {
+    color: $activeColour;
+  }
+}
+
+// Invert the colours of an element on hover
+@mixin hover-invert($textColour, $bgColour) {
+  background-color: $bgColour;
+  color: $textColour;
+
+  &:hover {
+    background-color: $textColour;
+    color: $bgColour;
+  }
+}
+
+// Underline an element on hover
+@mixin hover-underline($size, $borderColour) {
+  border-bottom: $size solid transparent;
+  padding-bottom: .5rem;
+  transition: border .5s;
+
+  &:hover {
+    border-bottom-color: $borderColour;
+  }
+}
+
+// Center align an element if (margin: 0 auto etc.) isn't possible
+@mixin center-align {
+  left: 50%;
+  transform: translateX(-50%);
+}
