@@ -1,5 +1,6 @@
-console.log('Javascript working!');
+console.log('App Running...');
 
-$('.header').css({
-  'text-decoration': 'underline',
+$.getScript('./app/static/js/components/header.js', function() {
+  header();
 });
+
