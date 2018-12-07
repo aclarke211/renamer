@@ -90,3 +90,9 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+// Add spacing of a set default size
+@mixin spacing {
+  margin: 1rem;
+  padding: 1rem;
+}

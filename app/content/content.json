@@ -1,0 +1,8 @@
+{
+  "header": {
+    "text": "This is the Header..."
+  },
+  "srcDir": {
+    "text": "Source Directory component."
+  }
+}

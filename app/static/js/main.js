@@ -6,10 +6,15 @@ const components = [{
   {
     name: 'srcDirectory'
   }
-]
+];
 
-components.forEach((component) => {
-  $.getScript(`./app/static/js/components/${component.name}.js`, function () {
-    init();
+const $appContainer = $('.components__container');
+
+$.getJSON('./app/content/content.json', function (content) {
+  components.forEach((component, key) => {
+    $.getScript(`./app/static/js/components/${component.name}.js`, function () {
+      init(content, $appContainer);
+      console.log(`Added ${components[key].name}`)
+    });
   });
 });
