@@ -8,8 +8,8 @@ function init(appContent, componentContent, $appContainer) {
 
 function template() {
   return `
-    <div class="header__container">
-      <h1 class="header">${content.data.text}</h1>
+    <div class="${content.componentName}__container">
+      <h1 class="${content.componentName}-text">${content.data.text}</h1>
     </div>
   `;
 }

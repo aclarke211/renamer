@@ -8,11 +8,11 @@ function init(appContent, componentContent, $appContainer) {
 
 function template() {
   return `
-    <div class="src-dir__container">
+    <div class="${content.componentName}__container">
       <div class="fields__container">
         <div class="field">
-          <label for="src-dir-path" class="src-dir-text">${content.data.text}</label>
-          <input id="src-dir-path" type="text">
+          <label for="${content.componentName}-path" class="${content.componentName}-text">${content.data.text}</label>
+          <input id="${content.componentName}-path" type="text">
         </div>
 
       </div>
