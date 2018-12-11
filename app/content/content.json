@@ -1,8 +1,15 @@
 {
-  "header": {
-    "text": "Express Test"
-  },
-  "srcDir": {
-    "text": "Source Directory:"
-  }
-}
+  "content": [
+    {
+      "componentName": "header",
+      "data": {
+        "text": "Express Node.js"
+      }
+    },
+    {
+      "componentName": "srcDirectory",
+      "data": {
+        "text": "Source Directory:"
+      }
+    }
+]}
