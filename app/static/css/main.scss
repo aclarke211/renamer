@@ -1,9 +1,13 @@
+// Base
 @import './app/static/css/base/_mixins.scss';
 @import './app/static/css/base/_forms.scss';
 
+// Components
 @import './app/static/css/components/header.scss';
-@import './app/static/css/components/srcDir.scss';
+@import './app/static/css/components/srcDirectory.scss';
+@import './app/static/css/components/devTools.scss';
 
+// General
 html {
   font-size: 16px;
   @include defaultFont;

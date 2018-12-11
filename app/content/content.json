@@ -11,5 +11,11 @@
       "data": {
         "text": "Source Directory:"
       }
+    },
+    {
+      "componentName": "devTools",
+      "data": {
+        "text": "Developer Tools:"
+      }
     }
 ]}
