@@ -1,3 +1,7 @@
 .devTools__container {
+  @include flex;
+
   border: solid blue;
+  padding: 2rem 1rem;
+  margin: 1rem auto;
 }
