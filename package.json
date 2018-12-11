@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "app": "node app/app",
     "start": "npm run app",
-    "stopAll": "killall node"
+    "stop": "killall node"
   },
   "author": "",
   "license": "ISC",
