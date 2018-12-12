@@ -8,6 +8,10 @@
 @import './app/static/css/components/devTools.scss';
 
 // General
+* {
+  transition: all .3s;
+}
+
 html {
   font-size: 16px;
   @include defaultFont;
