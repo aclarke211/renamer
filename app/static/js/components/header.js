@@ -1,15 +1,12 @@
-var allContent, content;
-
 function init(appContent, componentContent, $appContainer) {
-  allContent = appContent;
-  content = componentContent;
-  $appContainer.append(template());
+  $appContainer.append(template(componentContent, appContent));
 }
 
-function template() {
+function template(content, allContent) {
+  const name = content.componentName;
   return `
-    <div class="${content.componentName}__container">
-      <h1 class="${content.componentName}-text">${content.data.text}</h1>
+    <div class="${name}__container">
+      <h1 class="${name}-text">${content.data.text}</h1>
     </div>
   `;
 }

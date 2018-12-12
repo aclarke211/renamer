@@ -1,15 +1,19 @@
-var allContent, content;
-
 function init(appContent, componentContent, $appContainer) {
-  allContent = appContent;
-  content = componentContent;
-  $appContainer.append(template());
+  $appContainer.append(template(componentContent, appContent));
 }
 
-function template() {
+function template(content, allContent) {
+  const name = content.componentName;
   return `
-    <div class="${content.componentName}__container">
-      <h3 class="${content.componentName}-text">${content.data.text}</h3>
+    <div class="${name}__container">
+      <h3 class="${name}-text">${content.data.text}</h3>
+
+      <div class="${name}-btns">
+        <div class="${name}-btn ${name}-find-file">Find File</div>
+      </div>
+
+</div>
+
     </div>
   `;
 }

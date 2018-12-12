@@ -1,18 +1,15 @@
-var allContent, content;
-
 function init(appContent, componentContent, $appContainer) {
-  allContent = appContent;
-  content = componentContent;
-  $appContainer.append(template());
+  $appContainer.append(template(componentContent, appContent));
 }
 
-function template() {
+function template(content, allContent) {
+  var name = content.componentName;
   return `
-    <div class="${content.componentName}__container">
+    <div class="${name}__container">
       <div class="fields__container">
         <div class="field">
-          <label for="${content.componentName}-path" class="${content.componentName}-text">${content.data.text}</label>
-          <input id="${content.componentName}-path" type="text">
+          <label for="${name}-path" class="${name}-text">${content.data.text}</label>
+          <input id="${name}-path" type="text">
         </div>
 
       </div>
