@@ -1,7 +1,29 @@
-.devTools__container {
-  @include flex;
+// Variables
+$btnBGColor: seagreen;
+$btnTextColor: white;
+$btnBorderSize: 3px;
 
-  border: solid blue;
-  padding: 2rem 1rem;
-  margin: 1rem auto;
+.devTools {
+  &__container {
+    @include flex;
+
+    border: 1px solid lightblue;
+    padding: 2rem 1rem;
+    margin: 1rem auto;
+  }
+
+  &-btn {
+    @include hover-invert($btnTextColor, $btnBGColor, $btnBorderSize);
+    font-size: .9rem;
+    font-weight: 600;
+    margin: 1rem;
+    padding: .75rem 2rem;
+    cursor: pointer;
+
+
+    &:hover {
+      // font-size: 1.75rem;
+    }
+  }
+
 }
