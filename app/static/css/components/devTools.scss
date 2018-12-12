@@ -20,9 +20,8 @@ $btnBorderSize: 3px;
     padding: .75rem 2rem;
     cursor: pointer;
 
-
-    &:hover {
-      // font-size: 1.75rem;
+    &:active {
+      opacity: .3;
     }
   }
 
