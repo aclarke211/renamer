@@ -5,6 +5,7 @@ const compileSass = require('express-compile-sass');
 const root = process.cwd();
 
 const PORT = process.env.PORT || 5555;
+const Renamer = require('./static/js/renamer');
 
 express()
   .use(compileSass({
@@ -19,6 +20,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('index'))
+  .post("/find-file", Renamer.findFile)
   .listen(PORT, () => {
     console.log(colors.black.bgGreen('RENAMER started...'));
     console.log(colors.yellow('Listening on:'));
