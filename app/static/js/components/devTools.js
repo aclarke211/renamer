@@ -12,9 +12,6 @@ function template(content, allContent) {
       <div class="${name}-btns">
         <div class="${name}-btn ${name}-find-file">Find File</div>
       </div>
-
-</div>
-
     </div>
   `;
 }
