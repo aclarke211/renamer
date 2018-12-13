@@ -19,17 +19,23 @@ function template(content, allContent) {
 function addListeners(content) {
 
   $(`.${content.componentName}-find-file`).click(function () {
+
+    var contentToPass = {
+      "testJSON": $('#srcDirectory-path').val()
+    };
+
+    console.log(JSON.stringify(contentToPass));
+
     console.log("Running 'Find File' on Server.");
     // $.post('/find-file', msg);
     $.ajax({
       url: "/find-file",
       type: "POST",
       dataType: "json",
-      data: JSON.stringify({
-        "msg": $('#srcDirectory-path').val()
-      }),
-      contentType: "application/json",
+      data: JSON.stringify(contentToPass),
+      contentType: "application/json; charset=utf-8",
       cache: false,
+      processData: false,
       timeout: 5000,
       complete: function () {
         console.log('process complete');
