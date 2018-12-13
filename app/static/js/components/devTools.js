@@ -17,8 +17,33 @@ function template(content, allContent) {
 }
 
 function addListeners(content) {
+
   $(`.${content.componentName}-find-file`).click(function () {
     console.log("Running 'Find File' on Server.");
-    $.post('/find-file');
+    // $.post('/find-file', msg);
+    $.ajax({
+      url: "/find-file",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify({
+        "msg": $('#srcDirectory-path').val()
+      }),
+      contentType: "application/json",
+      cache: false,
+      timeout: 5000,
+      complete: function () {
+        console.log('process complete');
+      },
+
+      success: function (data) {
+        // console.log(data);
+        console.log('process sucess');
+      },
+
+      error: function () {
+        console.log('process error');
+      },
+    });
   });
+
 }

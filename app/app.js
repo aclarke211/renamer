@@ -3,6 +3,7 @@ const path = require('path');
 const colors = require('colors');
 const compileSass = require('express-compile-sass');
 const root = process.cwd();
+const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 5555;
 const Renamer = require('./static/js/renamer');
@@ -15,6 +16,7 @@ express()
     watchFiles: true, // Watches sass files and updates mtime on main files for each change
     logToConsole: false // If true, will log to console.error on errors
   }))
+  .use(bodyParser.json())
   .use(express.static(root))
   .use(express.static(path.join(__dirname, 'static')))
   .set('views', path.join(__dirname, 'views'))

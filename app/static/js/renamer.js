@@ -1,3 +1,5 @@
 module.exports.findFile = (req, res) => {
-  console.log('Find File Called.');
+  console.log(req.body);
+  res.json(req.body);
+  console.log('*****************');
 }
