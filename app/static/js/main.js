@@ -4,9 +4,15 @@ const $appContainer = $('.components__container');
 
 $.getJSON('./app/content/content.json', function (content) {
   content.content.forEach((component, key) => {
-    $.getScript(`./app/static/js/components/${component.componentName}.js`, function () {
-      init(content.content, component, $appContainer);
-      console.log(`Added ${component.componentName}`)
-    });
+    $.when(
+      $.getScript(`./app/static/js/components/${component.componentName}.js`,
+        $.Deferred(function (deferred) {
+          $(deferred.resolve);
+        })
+      ).done(function () {
+        init(content.content, component, $appContainer);
+        console.log(`Added ${component.componentName}`);
+
+      }));
   });
 });
