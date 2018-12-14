@@ -24,9 +24,7 @@ function addListeners(content) {
       "srcDir": $('#srcDirectory-path').val() || 'No Source Directory supplied.'
     };
 
-    console.log(JSON.stringify(contentToPass));
-
-    console.log("Running 'Find File' on Server.");
+    console.log("• Running 'Find File' on Server.");
     // $.post('/find-file', msg);
     $.ajax({
       url: "/find-file",
@@ -38,16 +36,17 @@ function addListeners(content) {
       processData: false,
       timeout: 5000,
       complete: function () {
-        console.log('process complete');
+        console.log('** process COMPLETE **');
       },
 
       success: function (data) {
-        // console.log(data);
-        console.log('process sucess');
+        console.log('** process SUCCESS **');
+        console.log(data);
+        console.log('^ Above data successfully passed.');
       },
 
       error: function () {
-        console.log('process error');
+        console.log('** process ERROR **');
       },
     });
   });
