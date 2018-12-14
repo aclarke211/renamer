@@ -4,7 +4,6 @@ module.exports.findFile = (req, res) => {
   const content = req.body;
   res.json(content);
 
-
   console.log('*****************');
   console.log('RECEIVED CONTENT:');
   console.log(content);
@@ -15,10 +14,29 @@ module.exports.findFile = (req, res) => {
 }
 
 function checkFileExists(dir, filename) {
-  const path = `${dir}/${filename}`
-  if (fs.existsSync(path)) {
-    console.log(`FILE "${filename}" FOUND!`)
+  let fileFound = false;
+
+  const fileTypes = {
+    mainType: ".mp4",
+    types: [".m4a", ".avi", ".wmv", ".mkv"]
+  };
+
+  const path = `${dir}/${filename}`;
+
+  if (fs.existsSync(`${path}${fileTypes.mainType}`)) {
+    fileFound = true;
+    console.log(`FILE "${filename}${fileTypes.mainType}" FOUND!`)
   } else {
-    console.log(`Cannot find file: "${filename}"`)
+
+    fileTypes.types.forEach((type) => {
+      if (fs.existsSync(`${path}${type}`)) {
+        fileFound = true;
+        console.log(`FILE "${filename}${type}" FOUND!`)
+      }
+    });
+
+    if (!fileFound) {
+      console.log(`Cannot find file: "${filename}"`)
+    }
   }
 }
