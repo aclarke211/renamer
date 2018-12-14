@@ -24,7 +24,7 @@ express()
   .get('/', (req, res) => res.render('index'))
   .post("/find-file", Renamer.findFile)
   .listen(PORT, () => {
-    console.log(colors.black.bgGreen('RENAMER started...'));
+    console.log(colors.black.bgGreen('RENAMER running...'));
     console.log(colors.yellow('Listening on:'));
     console.log(colors.cyan(`http://localhost:${PORT}`));
   });
