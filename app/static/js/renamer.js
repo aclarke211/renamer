@@ -1,7 +1,6 @@
 module.exports.findFile = (req, res) => {
-  res.json(req.body);
-
   const content = req.body;
+  res.json(content);
 
   console.log("All Passed JSON:");
   console.log(content);
