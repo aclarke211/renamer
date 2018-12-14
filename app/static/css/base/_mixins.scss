@@ -96,3 +96,11 @@
 @mixin defaultFont {
   font-family: Arial;
 }
+
+@mixin hover-bg($origColor, $hoverColor) {
+  background-color: $origColor;
+
+  &:hover {
+    background-color: $hoverColor;
+  }
+}

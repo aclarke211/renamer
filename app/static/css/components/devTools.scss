@@ -1,5 +1,6 @@
 // Variables
-$btnBGColor: seagreen;
+$btnBGColor: mediumseagreen;
+$btnBGColorHover: seagreen;
 $btnTextColor: white;
 $btnBorderSize: 3px;
 
@@ -13,7 +14,9 @@ $btnBorderSize: 3px;
   }
 
   &-btn {
-    @include hover-invert($btnTextColor, $btnBGColor, $btnBorderSize);
+    @include hover-bg($btnBGColor, $btnBGColorHover);
+    border: $btnBorderSize solid $btnBGColor;
+    color: white;
     font-size: .9rem;
     font-weight: 600;
     margin: 1rem;
