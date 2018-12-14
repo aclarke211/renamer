@@ -12,6 +12,18 @@
       }
     },
     {
+      "componentName": "filesToConv",
+      "data": {
+        "text": "Files to Convert Section.",
+        "orig_filename": {
+          "label": "Original Filename:"
+        },
+        "new_filename": {
+          "label": "New Filename:"
+        }
+      }
+    },
+    {
       "componentName": "devTools",
       "data": {
         "text": "Developer Tools:",
