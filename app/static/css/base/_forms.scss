@@ -1,4 +1,6 @@
 .fields__container {
+  max-width: 25rem;
+  width: 100%;
 
   .field {
     display: flex;
@@ -10,7 +12,8 @@
 
     input[type="text"] {
       border: 1px solid darkslategrey;
-      width: 20rem;
+      max-width: 100%;
+      flex: 1;
       display: flex;
       padding: .65rem .5rem;
       font-size: .75rem;
