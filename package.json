@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "app": "nodemon app/app",
+    "app": "nodemon app/app & sleep .5 && opn http://localhost:5555",
     "start": "npm run app",
     "stop": "killall node"
   },
@@ -21,6 +21,8 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "nodemon": "^1.18.8"
+    "nodemon": "^1.18.8",
+    "opn-cli": "^4.0.0",
+    "wait-on": "^3.2.0"
   }
 }
