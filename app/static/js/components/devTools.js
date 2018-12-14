@@ -21,7 +21,9 @@ function addListeners(content) {
   $(`.${content.componentName}-find-file`).click(function () {
 
     var contentToPass = {
-      "srcDir": $('#srcDirectory-path').val() || 'No Source Directory supplied.'
+      "srcDir": $('.srcDirectory-path').val() || 'No Source Directory supplied.',
+      "oldFilename": $('.filesToConv-orig-name').val() || 'No Old Filename provided',
+      "newFilename": $('.filesToConv-new-name').val() || 'No New Filename provided'
     };
 
     console.log("• Running 'Find File' on Server.");
