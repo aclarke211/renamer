@@ -9,7 +9,7 @@ function template(content, allContent) {
       <div class="fields__container">
         <div class="field">
           <label for="${name}-path" class="${name}-text">${content.data.text}</label>
-          <input id="${name}-path" type="text" value="Test Src Directory">
+          <input id="${name}-path" type="text" placeholder="Enter default source directory.">
         </div>
 
       </div>

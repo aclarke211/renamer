@@ -21,7 +21,7 @@ function addListeners(content) {
   $(`.${content.componentName}-find-file`).click(function () {
 
     var contentToPass = {
-      "testJSON": $('#srcDirectory-path').val()
+      "srcDir": $('#srcDirectory-path').val() || 'No Source Directory supplied.'
     };
 
     console.log(JSON.stringify(contentToPass));
