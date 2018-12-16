@@ -6,7 +6,7 @@ const root = process.cwd();
 const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 5555;
-const Renamer = require('./static/js/renamer');
+const Renamer = require('./static/js/server/renamer');
 
 express()
   .use(compileSass({
