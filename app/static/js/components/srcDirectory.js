@@ -1,5 +1,6 @@
 function init(appContent, componentContent, $appContainer) {
   $appContainer.append(template(componentContent, appContent));
+  addFrequentDirectories(componentContent);
 }
 
 function template(content, allContent) {
@@ -16,11 +17,22 @@ function template(content, allContent) {
           <label for="${name}-frequent" class="${name}-text">${content.data.frequent.text}</label>
           <select id="${name}-frequent">
             <option value="">Select a directory...</option>
-            <option value="C:\\Users\\User\\Downloads">C:\\ Downloads - Windows</option>
           </select>
         </div>
       </div>
 
     </div>
   `;
+}
+
+function addFrequentDirectories(content) {
+  $frequentSelectBox = $(`#${content.componentName}-frequent`);
+
+  content.data.frequent.directories.forEach((option) => {
+    const dirToAdd = `
+      <option value="${option.value}">${option.text}</option>
+    `
+
+    $frequentSelectBox.append(dirToAdd);
+  });
 }

@@ -10,7 +10,20 @@
       "data": {
         "text": "Source Directory:",
         "frequent": {
-          "text": "Frequent Directories:"
+          "text": "Frequent Directories:",
+          "directories": [{
+              "text": "Downloads [Windows]",
+              "value": "C:\\Users\\User\\Downloads"
+            },
+            {
+              "text": "8TB - DL",
+              "value": "G:\\SG 8TB\\Programs\\Zoom\\Lang\\FRA\\For Videos\\[DL]"
+            },
+            {
+              "text": "5TB - DL 2",
+              "value": "F:\\WD 5TB\\Programs\\Zoom\\Lang\\FRA\\For Videos 2\\[DL 2]"
+            }
+          ]
         }
       }
     },
