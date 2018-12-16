@@ -7,7 +7,7 @@ function template(content, allContent) {
   return `
     <div class="${name}__container">
 
-      <h2 class="${name}-text">${content.data.text}</h2>
+      <h2 class="${name}-text">${content.data.title}</h2>
 
       <div class="fields__container">
         <div class="field">

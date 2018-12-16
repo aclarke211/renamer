@@ -30,7 +30,7 @@
     {
       "componentName": "filesToConv",
       "data": {
-        "text": "Files to Convert Section.",
+        "title": "Files to Convert:",
         "orig_filename": {
           "label": "Original Filename:"
         },
