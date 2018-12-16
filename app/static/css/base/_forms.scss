@@ -4,6 +4,20 @@ $btnBGColorHover: seagreen;
 $btnTextColor: white;
 $btnBorderSize: 3px;
 
+.accordion {
+  border: 2px solid slategrey;
+  margin: 1rem 0;
+  padding: 1rem;
+  opacity: .5;
+  height: 15px;
+  overflow: hidden;
+
+  &.active {
+    height: auto;
+    opacity: 1;
+  }
+}
+
 .fields__container {
   width: 100%;
   @include flex;

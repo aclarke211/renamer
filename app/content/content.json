@@ -31,11 +31,17 @@
       "componentName": "filesToConv",
       "data": {
         "title": "Files to Convert:",
-        "orig_filename": {
-          "label": "Original Filename:"
+        "multipleFiles": {
+          "subtitle": "Multiple Files"
         },
-        "new_filename": {
-          "label": "New Filename:"
+        "singleFile": {
+          "subtitle": "Single File",
+          "orig_filename": {
+            "label": "Original Filename:"
+          },
+          "new_filename": {
+            "label": "New Filename:"
+          }
         }
       }
     },
