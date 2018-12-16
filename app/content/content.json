@@ -8,7 +8,10 @@
     {
       "componentName": "srcDirectory",
       "data": {
-        "text": "Source Directory:"
+        "text": "Source Directory:",
+        "frequent": {
+          "text": "Frequent Directories:"
+        }
       }
     },
     {

@@ -1,5 +1,12 @@
 function addListeners() {
 
+  // Select box for 'Source Directory'
+  $('#srcDirectory-frequent').change(function () {
+    $('#srcDirectory-path').val($('#srcDirectory-frequent').find(":selected").val());
+  });
+
+
+
   $(`.options-find-file`).click(function () {
 
     var contentToPass = {
