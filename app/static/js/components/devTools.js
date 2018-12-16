@@ -27,7 +27,7 @@ function addListeners(content) {
     };
 
     console.log("• Running 'Find File' on Server.");
-    // $.post('/find-file', msg);
+
     $.ajax({
       url: "/find-file",
       type: "POST",
