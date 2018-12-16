@@ -1,31 +1,8 @@
-// Variables
-$btnBGColor: mediumseagreen;
-$btnBGColorHover: seagreen;
-$btnTextColor: white;
-$btnBorderSize: 3px;
-
 .options {
   &__container {
     @include flex;
-
-    border: 1px solid lightblue;
+    border: 1px solid slategrey;
     padding: 2rem 1rem;
     margin: 1rem auto;
   }
-
-  &-btn {
-    @include hover-bg($btnBGColor, $btnBGColorHover);
-    border: $btnBorderSize solid $btnBGColor;
-    color: white;
-    font-size: .9rem;
-    font-weight: 600;
-    margin: 1rem;
-    padding: .75rem 2rem;
-    cursor: pointer;
-
-    &:active {
-      opacity: .3;
-    }
-  }
-
 }
