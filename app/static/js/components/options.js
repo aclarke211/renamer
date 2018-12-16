@@ -10,7 +10,7 @@ function template(content, allContent) {
       <h3 class="${name}-text">${content.data.text}</h3>
 
       <div class="${name}-btns">
-        <div class="${name}-btn ${name}-find-file">Find File</div>
+        <div class="${name}-btn ${name}-find-file">${content.data.btns.findFile.text}</div>
       </div>
     </div>
   `;

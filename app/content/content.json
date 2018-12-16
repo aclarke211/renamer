@@ -24,13 +24,15 @@
       }
     },
     {
-      "componentName": "devTools",
+      "componentName": "options",
       "data": {
-        "text": "Developer Tools:",
-        "btns": [{
-          "text": "Find That File",
-          "path": "/find-file"
-        }]
+        "text": "Options:",
+        "btns": {
+          "findFile": {
+            "text": "Find File",
+            "path": "/find-file"
+          }
+        }
       }
     }
   ]
