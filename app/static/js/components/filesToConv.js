@@ -48,13 +48,11 @@ function template(content, allContent) {
 }
 
 function activateAccordions() {
-  $('.accordion .subtitle').click(function() {
+  $('.accordion').click(function() {
     $('.accordion').each(function() {
       $(this).removeClass('active');
     });
-    $(this)
-      .parent()
-      .addClass('active');
+    $(this).addClass('active');
   });
 }
 
@@ -69,7 +67,7 @@ function logAllOrigNames() {
 
   const seperatedNamesArray = [];
 
-  namesArray.forEach(name => {
+  namesArray.forEach((name) => {
     const newNameSet = name.split(`	`);
     seperatedNamesArray.push(newNameSet);
   });
