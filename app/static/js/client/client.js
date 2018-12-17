@@ -1,14 +1,14 @@
 function addListeners() {
   // Select box for 'Source Directory'
-  $('#srcDirectory-frequent').change(function() {
+  $('#srcDirectory-frequent').change(function () {
     $('#srcDirectory-path').val(
       $('#srcDirectory-frequent')
-        .find(':selected')
-        .val(),
+      .find(':selected')
+      .val(),
     );
   });
 
-  $(`.options-find-file`).click(function() {
+  $(`.find-single-file-btn`).click(function () {
     let contentToPass = 'No content found.';
 
     if ($('.single-file__container').hasClass('active')) {
@@ -36,17 +36,17 @@ function addListeners() {
       cache: false,
       processData: false,
       timeout: 5000,
-      complete: function() {
+      complete: function () {
         console.log('** process COMPLETE **');
       },
 
-      success: function(data) {
+      success: function (data) {
         console.log('** process SUCCESS **');
         console.log(data);
         console.log('^ Above data successfully passed.');
       },
 
-      error: function() {
+      error: function () {
         console.log('** process ERROR **');
       },
     });

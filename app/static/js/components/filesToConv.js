@@ -1,5 +1,5 @@
 function init(appContent, componentContent, $appContainer) {
-  $.when($appContainer.append(template(componentContent, appContent))).done(function() {
+  $.when($appContainer.append(template(componentContent, appContent))).done(function () {
     activateAccordions();
   });
 }
@@ -9,7 +9,7 @@ function template(content, allContent) {
   return `
     <div class="${name}__container">
 
-      <h2 class="${name}-text">${content.data.title}</h2>
+      <h2 class="title">${content.data.title}</h2>
 
       <div class="multi-files__container accordion active">
         <h3 class="${name}-subtitle subtitle">${content.data.multipleFiles.subtitle}</h3>
@@ -40,6 +40,13 @@ function template(content, allContent) {
             <input id="${name}-new-name" class="${name}-new-name" type="text" placeholder="Original Filename">
           </div>
         </div>
+
+        <div class="btns_container">
+          <div class="btn find-single-file-btn">${content.data.singleFile.btns.findFile.text}</div>
+
+        </div>
+
+
       </div>
 
 
@@ -48,8 +55,8 @@ function template(content, allContent) {
 }
 
 function activateAccordions() {
-  $('.accordion').click(function() {
-    $('.accordion').each(function() {
+  $('.accordion').click(function () {
+    $('.accordion').each(function () {
       $(this).removeClass('active');
     });
     $(this).addClass('active');

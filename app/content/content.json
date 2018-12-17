@@ -45,6 +45,12 @@
           },
           "new_filename": {
             "label": "New Filename:"
+          },
+          "btns": {
+            "findFile": {
+              "text": "Find File",
+              "path": "/find-file"
+            }
           }
         }
       }
@@ -52,13 +58,7 @@
     {
       "componentName": "options",
       "data": {
-        "text": "Options:",
-        "btns": {
-          "findFile": {
-            "text": "Find File",
-            "path": "/find-file"
-          }
-        }
+        "text": "Options:"
       }
     }
   ]

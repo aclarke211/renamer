@@ -6,10 +6,10 @@ function template(content, allContent) {
   const name = content.componentName;
   return `
     <div class="${name}__container">
-      <h3 class="${name}-text">${content.data.text}</h3>
+      <h2 class="title">${content.data.text}</h2>
 
-      <div class="${name}-btns">
-        <div class="btn ${name}-find-file">${content.data.btns.findFile.text}</div>
+      <div class="${name}-options">
+        <sub class="${name}-text">Put options here...</sub>
       </div>
     </div>
   `;
