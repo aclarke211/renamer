@@ -37,7 +37,7 @@ function template(content, allContent) {
             <label for="${name}-new-name" class="${name}-text">${
     content.data.singleFile.new_filename.label
   }</label>
-            <input id="${name}-new-name" class="${name}-new-name" type="text" placeholder="Original Filename">
+            <input id="${name}-new-name" class="${name}-new-name" type="text" placeholder="New Filename">
           </div>
         </div>
 
