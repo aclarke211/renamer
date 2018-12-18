@@ -1,74 +1,92 @@
 function addListeners() {
   // Select box for 'Source Directory'
   $('#srcDirectory-frequent').change(function () {
-    $('#srcDirectory-path').val(
+    $('.srcDirectory-path').val(
       $('#srcDirectory-frequent')
       .find(':selected')
       .val(),
     );
+    $('.srcDirectory-path').removeClass('invalid');
+  });
+
+  $('.srcDirectory-path').focus(function () {
+    $(this).removeClass('invalid');
   });
 
   $(`.find-single-file-btn`).click(function () {
-    let contentToPass = {
-      srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.',
-      foundStatus: false,
-    };
 
-    if ($('.single-file__container').hasClass('active')) {
-      contentToPass.oldFilename = $('.filesToConv-orig-name').val() || 'No Old Filename provided';
-      contentToPass.newFilename = $('.filesToConv-new-name').val() || 'No New Filename provided';
-    }
+    if ($('.srcDirectory-path').val() === '') {
+      $('.srcDirectory-path').addClass('invalid');
 
-    if ($('.multi-files__container').hasClass('active')) {
-      // contentToPass = {
-      //   'Need to pass': 'Multi Content',
-      // };
-    }
+      // Scroll to a certain element
+      document.querySelector('.srcDirectory-path').scrollIntoView({
+        behavior: 'smooth'
+      });
+    } else {
 
-    console.log('=======================================');
-    console.log('Passed Content:');
-    console.log(contentToPass);
-    console.log('=======================================');
+      let contentToPass = {
+        srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.',
+        foundStatus: false,
+      };
 
-    $.ajax({
-      url: '/find-file',
-      type: 'POST',
-      dataType: 'json',
-      data: JSON.stringify(contentToPass),
-      contentType: 'application/json; charset=utf-8',
-      cache: false,
-      processData: false,
-      timeout: 5000,
-      complete: function () {
-        console.log('** process COMPLETE **');
-      },
+      if ($('.single-file__container').hasClass('active')) {
+        contentToPass.oldFilename = $('.filesToConv-orig-name').val() || 'No Old Filename provided';
+        contentToPass.newFilename = $('.filesToConv-new-name').val() || 'No New Filename provided';
+      }
 
-      success: function (data) {
-        console.log('** process SUCCESS **');
+      if ($('.multi-files__container').hasClass('active')) {
+        // contentToPass = {
+        //   'Need to pass': 'Multi Content',
+        // };
+      }
 
-        console.log('=======================================');
-        console.log('Returned Content: ');
-        console.log(data);
-        console.log('=======================================');
+      console.log('=======================================');
+      console.log('Passed Content:');
+      console.log(contentToPass);
+      console.log('=======================================');
 
-        $('.returned-content').children().remove();
+      $.ajax({
+        url: '/find-file',
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(contentToPass),
+        contentType: 'application/json; charset=utf-8',
+        cache: false,
+        processData: false,
+        timeout: 5000,
+        complete: function () {
+          console.log('** process COMPLETE **');
+        },
 
-        let html = `
+        success: function (data) {
+          console.log('** process SUCCESS **');
+
+          console.log('=======================================');
+          console.log('Returned Content: ');
+          console.log(data);
+          console.log('=======================================');
+
+          $('.returned-content').children().remove();
+
+          let html = `
           <h3 style="color: tomato">Could not find file: ${data.oldFilename}</h3>
         `;
 
-        if (data.foundStatus) {
-          html = `
+          if (data.foundStatus) {
+            html = `
             <h3 style="color: forestgreen">FOUND FILE: ${data.oldFilename}${data.fileType} !</h3>
           `;
-        }
+          }
 
-        $('.returned-content').append(html);
-      },
+          $('.returned-content').append(html);
+        },
 
-      error: function () {
-        console.log('** process ERROR **');
-      },
-    });
+        error: function () {
+          console.log('** process ERROR **');
+        },
+      });
+
+    }
+
   });
 }
