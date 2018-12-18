@@ -1,14 +1,14 @@
 function addListeners() {
   // Select box for 'Source Directory'
-  $('#srcDirectory-frequent').change(function() {
+  $('#srcDirectory-frequent').change(function () {
     $('#srcDirectory-path').val(
       $('#srcDirectory-frequent')
-        .find(':selected')
-        .val(),
+      .find(':selected')
+      .val(),
     );
   });
 
-  $(`.find-single-file-btn`).click(function() {
+  $(`.find-single-file-btn`).click(function () {
     let contentToPass = {
       srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.',
       foundStatus: false,
@@ -39,20 +39,34 @@ function addListeners() {
       cache: false,
       processData: false,
       timeout: 5000,
-      complete: function() {
+      complete: function () {
         console.log('** process COMPLETE **');
       },
 
-      success: function(data) {
+      success: function (data) {
         console.log('** process SUCCESS **');
 
         console.log('=======================================');
         console.log('Returned Content: ');
         console.log(data);
         console.log('=======================================');
+
+        $('.returned-content').children().remove();
+
+        let html = `
+          <h3>No file found.</h3>
+        `;
+
+        if (data.foundStatus) {
+          html = `
+            <h3>FILE FOUND!</h3>
+          `;
+        }
+
+        $('.returned-content').append(html);
       },
 
-      error: function() {
+      error: function () {
         console.log('** process ERROR **');
       },
     });

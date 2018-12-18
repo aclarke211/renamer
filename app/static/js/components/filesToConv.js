@@ -1,5 +1,5 @@
 function init(appContent, componentContent, $appContainer) {
-  $.when($appContainer.append(template(componentContent, appContent))).done(function() {
+  $.when($appContainer.append(template(componentContent, appContent))).done(function () {
     activateAccordions();
   });
 }
@@ -41,6 +41,10 @@ function template(content, allContent) {
           </div>
         </div>
 
+
+        <div class="returned-content">
+        </div>
+
         <div class="btns_container">
           <div class="btn find-single-file-btn">${content.data.singleFile.btns.findFile.text}</div>
 
@@ -55,8 +59,8 @@ function template(content, allContent) {
 }
 
 function activateAccordions() {
-  $('.accordion').click(function() {
-    $('.accordion').each(function() {
+  $('.accordion').click(function () {
+    $('.accordion').each(function () {
       $(this).removeClass('active');
     });
     $(this).addClass('active');
