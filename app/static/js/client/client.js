@@ -90,9 +90,7 @@ function addListeners() {
 
           $('.returned-content').append(html);
 
-          $.getScript('./app/static/js/modules/modal.js', function () {
-            showModal(data);
-          });
+          createResultsModal(data);
         },
 
         error: function () {
@@ -102,5 +100,14 @@ function addListeners() {
 
     }
 
+  });
+}
+
+function createResultsModal(data) {
+  $.when(
+    $.getScript('./app/static/js/modules/modal.js', function () {
+      showModal(data);
+    })).then(function () {
+    // Add click listener to 'rename' button in modal
   });
 }
