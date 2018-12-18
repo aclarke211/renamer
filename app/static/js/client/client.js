@@ -54,12 +54,12 @@ function addListeners() {
         $('.returned-content').children().remove();
 
         let html = `
-          <h3>No file found.</h3>
+          <h3>Could not find file: ${data.oldFilename}</h3>
         `;
 
         if (data.foundStatus) {
           html = `
-            <h3>FILE FOUND!</h3>
+            <h3>FOUND FILE: ${data.oldFilename}${data.fileType} !</h3>
           `;
         }
 

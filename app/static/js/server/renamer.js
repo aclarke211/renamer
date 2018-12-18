@@ -22,11 +22,13 @@ function checkFileExists(content) {
 
   if (fs.existsSync(`${path}${fileTypes.mainType}`)) {
     content.foundStatus = true;
+    content.fileType = fileTypes.mainType;
     console.log(`FILE "${content.oldFilename}${fileTypes.mainType}" FOUND!`);
   } else {
     fileTypes.types.forEach(type => {
       if (fs.existsSync(`${path}${type}`)) {
         content.foundStatus = true;
+        content.fileType = type;
         console.log(`FILE "${content.oldFilename}${type}" FOUND!`);
       }
     });
