@@ -1,5 +1,5 @@
 function init(appContent, componentContent, $appContainer) {
-  $.when($appContainer.append(template(componentContent, appContent))).done(function () {
+  $.when($appContainer.append(template(componentContent, appContent))).done(function() {
     activateAccordions();
   });
 }
@@ -55,8 +55,8 @@ function template(content, allContent) {
 }
 
 function activateAccordions() {
-  $('.accordion').click(function () {
-    $('.accordion').each(function () {
+  $('.accordion').click(function() {
+    $('.accordion').each(function() {
       $(this).removeClass('active');
     });
     $(this).addClass('active');
@@ -74,7 +74,7 @@ function logAllOrigNames() {
 
   const seperatedNamesArray = [];
 
-  namesArray.forEach((name) => {
+  namesArray.forEach(name => {
     const newNameSet = name.split(`	`);
     seperatedNamesArray.push(newNameSet);
   });

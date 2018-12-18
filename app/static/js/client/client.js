@@ -1,31 +1,33 @@
 function addListeners() {
   // Select box for 'Source Directory'
-  $('#srcDirectory-frequent').change(function () {
+  $('#srcDirectory-frequent').change(function() {
     $('#srcDirectory-path').val(
       $('#srcDirectory-frequent')
-      .find(':selected')
-      .val(),
+        .find(':selected')
+        .val(),
     );
   });
 
-  $(`.find-single-file-btn`).click(function () {
-    let contentToPass = 'No content found.';
+  $(`.find-single-file-btn`).click(function() {
+    let contentToPass = {
+      srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.',
+      foundStatus: false,
+    };
 
     if ($('.single-file__container').hasClass('active')) {
-      contentToPass = {
-        srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.',
-        oldFilename: $('.filesToConv-orig-name').val() || 'No Old Filename provided',
-        newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
-      };
+      contentToPass.oldFilename = $('.filesToConv-orig-name').val() || 'No Old Filename provided';
+      contentToPass.newFilename = $('.filesToConv-new-name').val() || 'No New Filename provided';
     }
 
     if ($('.multi-files__container').hasClass('active')) {
-      contentToPass = {
-        'Need to pass': 'Multi Content',
-      };
+      // contentToPass = {
+      //   'Need to pass': 'Multi Content',
+      // };
     }
 
-    console.log("• Running 'Find File' on Server.");
+    console.log('././././././././././././.')
+    console.log(contentToPass);
+    console.log('././././././././././././.')
 
     $.ajax({
       url: '/find-file',
@@ -36,17 +38,17 @@ function addListeners() {
       cache: false,
       processData: false,
       timeout: 5000,
-      complete: function () {
+      complete: function() {
         console.log('** process COMPLETE **');
       },
 
-      success: function (data) {
+      success: function(data) {
         console.log('** process SUCCESS **');
         console.log(data);
-        console.log('^ Above data successfully passed.');
+        console.log('^ Above data successfully passed?');
       },
 
-      error: function () {
+      error: function() {
         console.log('** process ERROR **');
       },
     });
