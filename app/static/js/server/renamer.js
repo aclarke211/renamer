@@ -13,30 +13,28 @@ module.exports.findFile = (req, res) => {
 };
 
 function checkFileExists(content) {
-  const fileTypes = {
-    mainType: '.mp4',
-    types: ['.m4a', '.avi', '.wmv', '.mkv'],
-  };
 
-  const path = `${content.srcDir}/${content.oldFilename}`;
+  content.files.forEach((file) => {
+    const path = `${content.srcDir}/${file.oldFilename}`;
 
-  if (fs.existsSync(`${path}${fileTypes.mainType}`)) {
-    content.foundStatus = true;
-    content.fileType = fileTypes.mainType;
-    console.log(`FILE "${content.oldFilename}${fileTypes.mainType}" FOUND!`);
-  } else {
-    fileTypes.types.forEach(type => {
-      if (fs.existsSync(`${path}${type}`)) {
-        content.foundStatus = true;
-        content.fileType = type;
-        console.log(`FILE "${content.oldFilename}${type}" FOUND!`);
+    if (fs.existsSync(`${path}${content.fileTypes.mainType}`)) {
+      file.foundStatus = true;
+      file.fileType = content.fileTypes.mainType;
+      console.log(`FILE "${file.oldFilename}${file.fileType}" FOUND!`);
+    } else {
+      content.fileTypes.types.forEach(type => {
+        if (fs.existsSync(`${path}${type}`)) {
+          file.foundStatus = true;
+          file.fileType = type;
+          console.log(`FILE "${file.oldFilename}${file.fileType}" FOUND!`);
+        }
+      });
+
+      if (!file.foundStatus) {
+        console.log(`Cannot find file: "${file.oldFilename}"`);
       }
-    });
-
-    if (!content.foundStatus) {
-      console.log(`Cannot find file: "${content.oldFilename}"`);
     }
-  }
+  });
 
   return content;
 }

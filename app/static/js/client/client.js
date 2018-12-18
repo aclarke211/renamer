@@ -24,14 +24,24 @@ function addListeners() {
       });
     } else {
 
+      let fileTypes = {
+        mainType: '.mp4',
+        types: ['.m4a', '.avi', '.wmv', '.mkv'],
+      };
+
       let contentToPass = {
         srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.',
-        foundStatus: false,
+        fileTypes: fileTypes
       };
 
       if ($('.single-file__container').hasClass('active')) {
-        contentToPass.oldFilename = $('.filesToConv-orig-name').val() || 'No Old Filename provided';
-        contentToPass.newFilename = $('.filesToConv-new-name').val() || 'No New Filename provided';
+        let files = [{
+          foundStatus: false,
+          oldFilename: $('.filesToConv-orig-name').val() || 'No Old Filename provided',
+          newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided'
+        }];
+
+        contentToPass.files = files;
       }
 
       if ($('.multi-files__container').hasClass('active')) {
@@ -69,12 +79,12 @@ function addListeners() {
           $('.returned-content').children().remove();
 
           let html = `
-          <h3 style="color: tomato">Could not find file: ${data.oldFilename}</h3>
+          <h3 style="color: tomato">Could not find file: ${data.files[0].oldFilename}</h3>
         `;
 
-          if (data.foundStatus) {
+          if (data.files[0].foundStatus) {
             html = `
-            <h3 style="color: forestgreen">FOUND FILE: ${data.oldFilename}${data.fileType} !</h3>
+            <h3 style="color: forestgreen">FOUND FILE: ${data.files[0].oldFilename}${data.files[0].fileType} !</h3>
           `;
           }
 
