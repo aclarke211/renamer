@@ -1,6 +1,5 @@
 {
-  "content": [
-    {
+  "content": [{
       "componentName": "header",
       "data": {
         "text": "Express Node.js"
@@ -12,8 +11,7 @@
         "text": "Source Directory:",
         "frequent": {
           "text": "Frequent Directories:",
-          "directories": [
-            {
+          "directories": [{
               "text": "Downloads [Windows]",
               "value": "C:\\Users\\User\\Downloads"
             },
@@ -36,7 +34,7 @@
     {
       "componentName": "filesToConv",
       "data": {
-        "title": "Files to Convert:",
+        "title": "Files:",
         "multipleFiles": {
           "subtitle": "Multiple Files"
         },
