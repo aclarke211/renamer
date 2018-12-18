@@ -79,6 +79,10 @@ function addListeners() {
           }
 
           $('.returned-content').append(html);
+
+          $.getScript('./app/static/js/modules/modal.js', function () {
+            showModal(data);
+          });
         },
 
         error: function () {
