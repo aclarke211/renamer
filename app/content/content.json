@@ -1,5 +1,6 @@
 {
-  "content": [{
+  "content": [
+    {
       "componentName": "header",
       "data": {
         "text": "Express Node.js"
@@ -11,7 +12,8 @@
         "text": "Source Directory:",
         "frequent": {
           "text": "Frequent Directories:",
-          "directories": [{
+          "directories": [
+            {
               "text": "Downloads [Windows]",
               "value": "C:\\Users\\User\\Downloads"
             },
@@ -20,11 +22,11 @@
               "value": "/Users/alex.clarke/Downloads"
             },
             {
-              "text": "8TB - DL",
+              "text": "For Vids",
               "value": "G:\\SG 8TB\\Programs\\Zoom\\Lang\\FRA\\For Videos\\[DL]"
             },
             {
-              "text": "5TB - DL 2",
+              "text": "For Vids 2",
               "value": "F:\\WD 5TB\\Programs\\Zoom\\Lang\\FRA\\For Videos 2\\[DL 2]"
             }
           ]

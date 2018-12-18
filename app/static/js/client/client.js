@@ -25,9 +25,10 @@ function addListeners() {
       // };
     }
 
-    console.log('././././././././././././.')
+    console.log('=======================================');
+    console.log('Passed Content:');
     console.log(contentToPass);
-    console.log('././././././././././././.')
+    console.log('=======================================');
 
     $.ajax({
       url: '/find-file',
@@ -44,8 +45,11 @@ function addListeners() {
 
       success: function(data) {
         console.log('** process SUCCESS **');
+
+        console.log('=======================================');
+        console.log('Returned Content: ');
         console.log(data);
-        console.log('^ Above data successfully passed?');
+        console.log('=======================================');
       },
 
       error: function() {
