@@ -1,0 +1,50 @@
+.modal-title {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto 0;
+}
+
+.returned-files__container {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem auto;
+
+  .files {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .found-files {
+    color: green;
+  }
+
+  .missing-files {
+    color: red;
+  }
+
+  .status-title {
+    color: black;
+  }
+
+  .file {
+    border: 1px solid darkslategrey;
+    padding: .5rem 2rem;
+    margin: .5rem;
+
+    .current_filename {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .new_filename {
+      font-size: .9rem;
+    }
+  }
+
+}
+
+.modal-btn {
+  opacity: .4;
+  margin: 0;
+}

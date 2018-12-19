@@ -2,6 +2,9 @@
 @import './app/static/css/base/_mixins.scss';
 @import './app/static/css/base/_forms.scss';
 
+// Modules
+@import './app/static/css/modules/modal.scss';
+
 // Components
 @import './app/static/css/components/header.scss';
 @import './app/static/css/components/srcDirectory.scss';
