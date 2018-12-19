@@ -11,7 +11,7 @@ function template(content, allContent) {
 
       <h2 class="title">${content.data.title}</h2>
 
-      <div class="multi-files__container accordion active">
+      <div class="multi-files__container accordion">
         <h3 class="${name}-subtitle subtitle">${content.data.multipleFiles.subtitle}</h3>
         <div class="fields__container">
           <div class="field">
@@ -23,7 +23,7 @@ function template(content, allContent) {
       </div>
 
 
-      <div class="single-file__container accordion">
+      <div class="single-file__container accordion active">
         <h3 class="${name}-subtitle subtitle">${content.data.singleFile.subtitle}</h3>
         <div class="fields__container">
           <div class="field">
