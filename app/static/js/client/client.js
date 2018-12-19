@@ -54,10 +54,6 @@ function createContent(names, type) {
   return contentToPass;
 }
 
-function createMultipleFiles(type) {
-
-}
-
 // called in 'filesToConv.js'
 function logAllOrigNames() {
   $origNamesInput = $('.filesToConv-all-orig-names-input');
