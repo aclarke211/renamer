@@ -15,14 +15,14 @@ module.exports.findFile = (req, res) => {
 function checkFileExists(content) {
 
   content.files.forEach((file) => {
-    const path = `${content.srcDir}/${file.oldFilename}`;
+    const path = `${file.srcDir}/${file.oldFilename}`;
 
-    if (fs.existsSync(`${path}${content.fileTypes.mainType}`)) {
+    if (fs.existsSync(`${path}${file.fileTypes.mainType}`)) {
       file.foundStatus = true;
-      file.fileType = content.fileTypes.mainType;
+      file.fileType = file.fileTypes.mainType;
       console.log(`FILE "${file.oldFilename}${file.fileType}" FOUND!`);
     } else {
-      content.fileTypes.types.forEach(type => {
+      file.fileTypes.types.forEach(type => {
         if (fs.existsSync(`${path}${type}`)) {
           file.foundStatus = true;
           file.fileType = type;

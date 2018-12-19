@@ -1,5 +1,5 @@
 function showModal(data) {
-  alert(JSON.stringify(data));
+  // alert(JSON.stringify(data));
 }
 
 

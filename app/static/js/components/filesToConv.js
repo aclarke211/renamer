@@ -66,22 +66,3 @@ function activateAccordions() {
     $(this).addClass('active');
   });
 }
-
-function logAllOrigNames() {
-  $origNamesInput = $('.filesToConv-all-orig-names-input');
-
-  var namesArray = $origNamesInput.val().split(`
-`);
-
-  // console.log($origNamesInput.val());
-  // console.log(namesArray);
-
-  const seperatedNamesArray = [];
-
-  namesArray.forEach(name => {
-    const newNameSet = name.split(`	`);
-    seperatedNamesArray.push(newNameSet);
-  });
-
-  console.log(seperatedNamesArray);
-}
