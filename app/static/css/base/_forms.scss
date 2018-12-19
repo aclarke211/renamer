@@ -59,19 +59,20 @@ $btnBorderSize: 3px;
 .btns_container {
   @include flex;
 
-  .btn {
-    @include hover-bg($btnBGColor, $btnBGColorHover);
-    border: $btnBorderSize solid $btnBGColor;
-    color: white;
-    font-size: .9rem;
-    font-weight: 600;
-    margin: 1rem;
-    padding: .75rem 2rem;
-    cursor: pointer;
-    text-align: center;
+}
 
-    &:active {
-      opacity: .3;
-    }
+.btn {
+  @include hover-bg($btnBGColor, $btnBGColorHover);
+  border: $btnBorderSize solid $btnBGColor;
+  color: white;
+  font-size: .9rem;
+  font-weight: 600;
+  margin: 1rem;
+  padding: .75rem 2rem;
+  cursor: pointer;
+  text-align: center;
+
+  &:active {
+    opacity: .3;
   }
 }
