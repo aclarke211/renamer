@@ -2,17 +2,14 @@ var fs = require('fs');
 
 module.exports.findFile = (req, res) => {
   let content = req.body;
-
-  console.log('*****************');
   console.log('RECEIVED CONTENT:');
   console.log(content);
-  console.log('*****************');
 
-  content = checkFileExists(content);
+  content = checkFilesExist(content);
   res.json(content);
 };
 
-function checkFileExists(content) {
+function checkFilesExist(content) {
 
   content.files.forEach((file) => {
     const path = `${file.srcDir}/${file.oldFilename}`;
