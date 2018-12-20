@@ -1,27 +1,41 @@
 function showModal(data) {
 
-  $('.modal__container').remove();
+  closeModal();
 
   const basicModal = `
-  <div class="modal__container">
-    <h3 class="modal-title">Modal</h3>
-    <div class="returned-files__container">
-    <div class="found-files files">
-      <h4 class="status-title">FOUND FILES</h4>
-    </div>
-      <div class="missing-files files">
-        <h4 class="status-title">MISSING FILES</h4>
+  <div class="modal__outer">
+    <div class="modal__container">
+      <div class="modal__inner">
+        <div class="modal__close">x</div>
+        <h3 class="modal-title">Modal</h3>
+        <div class="returned-files__container">
+        <div class="found-files files">
+          <h4 class="status-title">FOUND FILES</h4>
+        </div>
+          <div class="missing-files files">
+            <h4 class="status-title">MISSING FILES</h4>
+          </div>
+        </div>
+        <div class="btns_container">
+          <div class="modal-btn btn">Rename Files</div>
+        </div>
       </div>
     </div>
-    <div class="btns_container">
-      <div class="modal-btn btn">Rename Files</div>
-    </div>
+
   </div>
   `;
 
-  $('.filesToConv__container').append(basicModal);
+  $('.main__container').append(basicModal);
   sortFiles(data)
 
+  $('.modal__close').click(() => {
+    closeModal();
+  });
+
+}
+
+function closeModal() {
+  $('.modal__outer').remove();
 }
 
 function createFileElem(file, parentElem) {
@@ -46,11 +60,7 @@ function sortFiles(data) {
 }
 
 
-// Need to display a modal in 'showModal' function (add Modal element to DOM)
-
-// Message to say if file/files have been found
-
-// 2 lists for FOUND and NOT FOUND files
+// Need to get proper way to close modal (click outside of it)
 
 // Found files to be sorted by their filetype
 

@@ -1,50 +1,84 @@
-.modal-title {
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto 0;
-}
+.modal__outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
 
-.returned-files__container {
-  display: flex;
-  justify-content: space-around;
-  margin: 2rem auto;
+  .modal__container {
+    background-color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 90%;
 
-  .files {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .found-files {
-    color: green;
-  }
-
-  .missing-files {
-    color: red;
-  }
-
-  .status-title {
-    color: black;
-  }
-
-  .file {
-    border: 1px solid darkslategrey;
-    padding: .5rem 2rem;
-    margin: .5rem;
-
-    .current_filename {
-      font-weight: 600;
-      font-size: 1rem;
+    .modal__close {
+      cursor: pointer;
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
     }
 
-    .new_filename {
-      font-size: .9rem;
+    .modal__inner {
+      border: 1px solid blue;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+
+      .modal-title {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto 0;
+      }
+
+      .returned-files__container {
+        display: flex;
+        justify-content: space-around;
+        margin: 2rem auto;
+
+        .files {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .found-files {
+          color: green;
+        }
+
+        .missing-files {
+          color: red;
+        }
+
+        .status-title {
+          color: black;
+        }
+
+        .file {
+          border: 1px solid darkslategrey;
+          padding: .5rem 2rem;
+          margin: .5rem;
+
+          .current_filename {
+            font-weight: 600;
+            font-size: 1rem;
+          }
+
+          .new_filename {
+            font-size: .9rem;
+          }
+        }
+
+      }
     }
+
+    .modal-btn {
+      opacity: .4;
+      margin: 0;
+    }
+
   }
-
 }
 
-.modal-btn {
-  opacity: .4;
-  margin: 0;
-}
