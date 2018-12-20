@@ -14,12 +14,15 @@ function addListeners() {
   });
 
   $(`.find-single-file-btn`).click(function () {
-    validateForms();
+    const runStatus = validateForms();
     const names = [{
       oldFilename: $('.filesToConv-orig-name').val() || 'No Old Filename provided',
       newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
     }];
-    sendData('/find-file', createContent(names, 'video'));
+
+    if (runStatus) {
+      sendData('/find-file', createContent(names, 'video'));
+    }
   });
 }
 
@@ -75,6 +78,8 @@ function logAllOrigNames() {
 }
 
 function validateForms() {
+  let formStatus = true;
+
   if ($('.srcDirectory-path').val() === '') {
     $('.srcDirectory-path').addClass('invalid');
 
@@ -82,7 +87,11 @@ function validateForms() {
     document.querySelector('.srcDirectory-path').scrollIntoView({
       behavior: 'smooth'
     });
+
+    formStatus = false;
   }
+
+  return formStatus;
 }
 
 function sendData(url, contentToPass) {
