@@ -3,7 +3,7 @@ var fs = require('fs');
 module.exports.findFile = (req, res) => {
   let content = req.body;
   console.log('RECEIVED CONTENT:');
-  console.log(content);
+  // console.log(content);
 
   content = checkFilesExist(content);
   res.json(content);
@@ -33,5 +33,6 @@ function checkFilesExist(content) {
     }
   });
 
+  // console.log(content);
   return content;
 }

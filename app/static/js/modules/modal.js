@@ -32,7 +32,7 @@ function showModal(data) {
       closeModal();
     })
     .children()
-    .click(function(e) {
+    .click(function (e) {
       return false;
     });
 
@@ -52,6 +52,8 @@ function createFileElem(file, parentElem) {
     <p class="new_filename">${file.newFilename}</p>
   </div>
 `;
+  // console.log('CREATE FILE');
+  // console.log(file);
   $(parentElem).append(fileElem);
 }
 

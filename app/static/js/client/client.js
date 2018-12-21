@@ -6,7 +6,7 @@ function addListeners() {
       .find(':selected')
       .val(),
     );
-    $('input[type="text"]').removeClass('invalid');
+    $('.srcDirectory-path').removeClass('invalid');
   });
 
   $('input[type="text"]').focus(function () {
@@ -47,6 +47,7 @@ function createContent(names, type) {
       oldFilename: name.oldFilename,
       newFilename: name.newFilename,
       fileTypes: fileTypes,
+      fileType: '',
       srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.'
     }
     files.push(file);
@@ -74,7 +75,7 @@ function logAllOrigNames() {
     seperatedNamesArray.push(newNameSet);
   });
 
-  console.log(seperatedNamesArray);
+  // console.log(seperatedNamesArray);
 }
 
 function validateForms() {
@@ -110,12 +111,13 @@ function sendData(url, contentToPass) {
     },
 
     success: function (data) {
-      console.log('Data successfully sent');
-
-      console.log('=======================================');
-      console.log('Returned Content: ');
       console.log(data);
-      console.log('=======================================');
+      // console.log('Data successfully sent');
+
+      // console.log('=======================================');
+      // console.log('Returned Content: ');
+      // console.log(data);
+      // console.log('=======================================');
 
       $('.returned-content').children().remove();
 

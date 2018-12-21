@@ -12,12 +12,12 @@ $.when(
           })
         ).done(function () {
           init(content.content, component, $appContainer);
-          console.log(`Added ${component.componentName}`);
+          // console.log(`Added ${component.componentName}`);
         }));
     });
   })).then(function () {
   $.getScript('./app/static/js/client/client.js', function () {
     addListeners();
-    console.log('ADDED LISTENERS');
+    // console.log('ADDED LISTENERS');
   });
 });
