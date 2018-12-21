@@ -75,7 +75,7 @@ function logAllOrigNames() {
     seperatedNamesArray.push(newNameSet);
   });
 
-  // console.log(seperatedNamesArray);
+  console.log(seperatedNamesArray);
 }
 
 function validateForms() {
