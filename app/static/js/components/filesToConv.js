@@ -11,19 +11,20 @@ function template(content, allContent) {
 
       <h2 class="title">${content.data.title}</h2>
 
-      <div class="multi-files__container accordion">
+      <div class="multi-files__container accordion active">
         <h3 class="${name}-subtitle subtitle">${content.data.multipleFiles.subtitle}</h3>
         <div class="fields__container">
           <div class="field">
             <label for="${name}-all-orig-names" class="${name}-all-orig-names-label">*ALL ORIG NAMES</label>
-            <textarea class="${name}-all-orig-names-input"></textarea>
+            <textarea class="${name}-all-orig-names-input">oldFilename_01 newFileName_01
+oldFilename_02 newFilename_02</textarea>
           </div>
         </div>
-        <button class="log-names-btn" onclick="logAllOrigNames()">Console Log Names</button>
+        <div class="log-names__btn btn">Console Log Names</div>
       </div>
 
 
-      <div class="single-file__container accordion active">
+      <div class="single-file__container accordion">
         <h3 class="${name}-subtitle subtitle">${content.data.singleFile.subtitle}</h3>
         <div class="fields__container">
           <div class="field">

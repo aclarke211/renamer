@@ -21,6 +21,27 @@ function addListeners() {
 
     prepareDataToSend('/find-file', names, 'video');
   });
+
+  $(`.find-single-file-btn`).click(function () {
+    const names = [{
+      oldFilename: $('.filesToConv-orig-name').val() || 'No Old Filename provided',
+      newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
+    }];
+
+    console.log(names);
+
+    prepareDataToSend('/find-file', names, 'video');
+  });
+
+  $('.log-names__btn').click(function () {
+    logAllOrigNames();
+    // const names = [{
+    //   oldFilename: 'testing',
+    //   newFilename: 'testing_new',
+    // }];
+
+    // prepareDataToSend('/find-file', names, 'video');
+  });
 }
 
 function prepareDataToSend(renamerExport, names, type) {
@@ -61,7 +82,6 @@ function createContent(names, type) {
   return contentToPass;
 }
 
-// called in 'filesToConv.js'
 function logAllOrigNames() {
   $origNamesInput = $('.filesToConv-all-orig-names-input');
 
@@ -74,8 +94,16 @@ function logAllOrigNames() {
   const seperatedNamesArray = [];
 
   namesArray.forEach(name => {
-    const newNameSet = name.split(`	`);
-    seperatedNamesArray.push(newNameSet);
+    const newNameSet = name.split(` `);
+    const newNameObject = {
+      oldFilename: '',
+      newFilename: '',
+    };
+    newNameObject.oldFilename = newNameSet[0];
+    newNameObject.newFilename = newNameSet[1];
+
+
+    seperatedNamesArray.push(newNameObject);
   });
 
   console.log(seperatedNamesArray);
