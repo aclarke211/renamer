@@ -19,36 +19,16 @@ function addListeners() {
       newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
     }];
 
-    prepareDataToSend('/find-file', names, 'video');
-  });
-
-  $(`.find-single-file-btn`).click(function () {
-    const names = [{
-      oldFilename: $('.filesToConv-orig-name').val() || 'No Old Filename provided',
-      newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
-    }];
-
-    console.log(names);
-
-    prepareDataToSend('/find-file', names, 'video');
+    prepareDataToSend('/find-file', names, 'video', '.single-file__container');
   });
 
   $('.log-names__btn').click(function () {
-    // names = readMultipleFilenames();
-    // const names = [{
-    //   oldFilename: 'testing',
-    //   newFilename: 'testing_new',
-    // }];
-
-    // console.log('****************');
-    // console.log(names);
-    // console.log('****************');
-    prepareDataToSend('/find-file', readMultipleFilenames(), 'video');
+    prepareDataToSend('/find-file', readMultipleFilenames(), 'video', '.multi-files__container');
   });
 }
 
-function prepareDataToSend(renamerExport, names, type) {
-  if (validateForms()) {
+function prepareDataToSend(renamerExport, names, type, form) {
+  if (validateForms(form)) {
     sendData(renamerExport, createContent(names, type));
   }
 }
@@ -113,22 +93,26 @@ function readMultipleFilenames() {
   return seperatedNamesArray;
 }
 
-function validateForms() {
+function validateForms(form) {
   let formStatus = true;
 
-  $('input[type="text"]').each(function () {
+  $(`${form} input[type="text"]`).each(function () {
     if ($(this).val() === '') {
       $(this).addClass('invalid');
-
-      // Scroll to the element with no input
-      document.getElementsByClassName('invalid')[0].scrollIntoView({
-        behavior: 'smooth'
-      });
+      smoothScrollElement('invalid');
       formStatus = false;
     }
   });
 
   return formStatus;
+}
+
+function smoothScrollElement(className) {
+  document.getElementsByClassName(className)[0].scrollIntoView({
+    behavior: 'smooth'
+  });
+  formStatus = false;
+
 }
 
 function sendData(url, contentToPass) {
