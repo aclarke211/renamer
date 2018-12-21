@@ -6,10 +6,10 @@ function addListeners() {
       .find(':selected')
       .val(),
     );
-    $('.srcDirectory-path').removeClass('invalid');
+    $('input[type="text"]').removeClass('invalid');
   });
 
-  $('.srcDirectory-path').focus(function () {
+  $('input[type="text"]').focus(function () {
     $(this).removeClass('invalid');
   });
 
@@ -80,16 +80,17 @@ function logAllOrigNames() {
 function validateForms() {
   let formStatus = true;
 
-  if ($('.srcDirectory-path').val() === '') {
-    $('.srcDirectory-path').addClass('invalid');
+  $('input[type="text"]').each(function () {
+    if ($(this).val() === '') {
+      $(this).addClass('invalid');
 
-    // Scroll to the element with no input
-    document.querySelector('.srcDirectory-path').scrollIntoView({
-      behavior: 'smooth'
-    });
-
-    formStatus = false;
-  }
+      // Scroll to the element with no input
+      document.getElementsByClassName('invalid')[0].scrollIntoView({
+        behavior: 'smooth'
+      });
+      formStatus = false;
+    }
+  });
 
   return formStatus;
 }

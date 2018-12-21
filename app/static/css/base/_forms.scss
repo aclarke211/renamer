@@ -44,6 +44,10 @@ $btnBorderSize: 3px;
       padding: .65rem .5rem;
       font-size: .75rem;
       align-items: center;
+
+      &.invalid {
+        border: 2px solid red;
+      }
     }
 
     select {
