@@ -41,10 +41,6 @@ function template(content, allContent) {
           </div>
         </div>
 
-
-        <div class="returned-content">
-        </div>
-
         <div class="btns_container">
           <div class="btn find-single-file-btn">${content.data.singleFile.btns.findFile.text}</div>
 

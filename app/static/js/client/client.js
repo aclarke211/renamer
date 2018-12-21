@@ -113,25 +113,8 @@ function sendData(url, contentToPass) {
 
     success: function (data) {
       console.log('Data successfully sent');
-
-      // console.log('=======================================');
       console.log('Returned Content: ');
       console.log(data);
-      // console.log('=======================================');
-
-      $('.returned-content').children().remove();
-
-      let html = `
-          <h3 style="color: tomato">Could not find file: ${data.files[0].oldFilename}</h3>
-        `;
-
-      if (data.files[0].foundStatus) {
-        html = `
-            <h3 style="color: forestgreen">FOUND FILE: ${data.files[0].oldFilename}${data.files[0].fileType} !</h3>
-          `;
-      }
-
-      $('.returned-content').append(html);
 
       createResultsModal(data);
     },
