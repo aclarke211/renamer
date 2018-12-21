@@ -1,5 +1,4 @@
 function showModal(data) {
-
   closeModal();
 
   const basicModal = `
@@ -26,12 +25,20 @@ function showModal(data) {
   `;
 
   $('.main__container').append(basicModal);
-  sortFiles(data)
+  sortFiles(data);
+
+  $('.modal__outer')
+    .click(() => {
+      closeModal();
+    })
+    .children()
+    .click(function(e) {
+      return false;
+    });
 
   $('.modal__close').click(() => {
     closeModal();
   });
-
 }
 
 function closeModal() {
@@ -49,16 +56,14 @@ function createFileElem(file, parentElem) {
 }
 
 function sortFiles(data) {
-  data.files.forEach((file) => {
+  data.files.forEach(file => {
     if (file.foundStatus) {
       createFileElem(file, $('.found-files'));
     } else {
       createFileElem(file, $('.missing-files'));
     }
-
-  })
+  });
 }
-
 
 // Need to get proper way to close modal (click outside of it)
 
