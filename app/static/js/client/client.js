@@ -96,6 +96,12 @@ function readMultipleFilenames() {
 function validateForms(form) {
   let formStatus = true;
 
+  if ($('.srcDirectory-path').val() === '') {
+    $('.srcDirectory-path').addClass('invalid');
+    smoothScrollElement('srcDirectory-path');
+    formStatus = false;
+  }
+
   $(`${form} input[type="text"]`).each(function () {
     if ($(this).val() === '') {
       $(this).addClass('invalid');
