@@ -107,16 +107,16 @@ function sendData(url, contentToPass) {
     processData: false,
     timeout: 5000,
     complete: function () {
-      console.log('Completed a request to the server.');
+      console.log('Request Complete');
+      console.log('----------------------');
     },
 
     success: function (data) {
-      console.log(data);
-      // console.log('Data successfully sent');
+      console.log('Data successfully sent');
 
       // console.log('=======================================');
-      // console.log('Returned Content: ');
-      // console.log(data);
+      console.log('Returned Content: ');
+      console.log(data);
       // console.log('=======================================');
 
       $('.returned-content').children().remove();
