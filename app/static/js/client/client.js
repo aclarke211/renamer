@@ -14,16 +14,19 @@ function addListeners() {
   });
 
   $(`.find-single-file-btn`).click(function () {
-    const runStatus = validateForms();
     const names = [{
       oldFilename: $('.filesToConv-orig-name').val() || 'No Old Filename provided',
       newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
     }];
 
-    if (runStatus) {
-      sendData('/find-file', createContent(names, 'video'));
-    }
+    prepareDataToSend('/find-file', names, 'video');
   });
+}
+
+function prepareDataToSend(renamerExport, names, type) {
+  if (validateForms()) {
+    sendData(renamerExport, createContent(names, type));
+  }
 }
 
 function createContent(names, type) {
