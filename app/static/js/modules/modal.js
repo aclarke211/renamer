@@ -1,7 +1,7 @@
 function showModal(data) {
   closeModal();
 
-  const basicModal = `
+  const modal = `
   <div class="modal__outer">
     <div class="modal__container">
       <div class="modal__inner">
@@ -24,7 +24,7 @@ function showModal(data) {
   </div>
   `;
 
-  $('.main__container').append(basicModal);
+  $('.main__container').append(modal);
   sortFiles(data);
 
   $('.modal__outer')
@@ -32,7 +32,7 @@ function showModal(data) {
       closeModal();
     })
     .children()
-    .click(function (e) {
+    .click(function(e) {
       return false;
     });
 
