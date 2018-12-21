@@ -24,10 +24,10 @@
     }
 
     .modal__inner {
-      border: 1px solid blue;
       display: flex;
       flex-direction: column;
       padding: 1rem;
+      max-width: 100%;
 
       .modal-title {
         font-size: 1.5rem;
@@ -38,12 +38,20 @@
 
       .returned-files__container {
         display: flex;
-        justify-content: space-around;
         margin: 2rem auto;
+        padding: .5rem;
+        width: 95%;
+        flex-direction: column;
 
         .files {
           display: flex;
           flex-direction: column;
+          border: 1px solid lightgrey;
+          margin: 0 .25rem;
+          padding: .5rem;
+          flex: 1;
+          align-items: center;
+          position: relative;
         }
 
         .found-files {
@@ -56,12 +64,17 @@
 
         .status-title {
           color: black;
+          border: 2px solid black;
+          padding: .5rem 2rem;
+          border-radius: 20px;
+          margin-bottom: .75rem;
         }
 
         .file {
           border: 1px solid darkslategrey;
-          padding: .5rem 2rem;
+          padding: .5rem 1rem;
           margin: .5rem;
+          width: 70%;
 
           .current_filename {
             font-weight: 600;

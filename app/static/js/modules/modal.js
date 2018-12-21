@@ -6,7 +6,7 @@ function showModal(data) {
     <div class="modal__container">
       <div class="modal__inner">
         <div class="modal__close">x</div>
-        <h3 class="modal-title">Modal</h3>
+        <h3 class="modal-title">Results</h3>
         <div class="returned-files__container">
         <div class="found-files files">
           <h4 class="status-title">FOUND FILES</h4>
