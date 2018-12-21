@@ -34,13 +34,16 @@ function addListeners() {
   });
 
   $('.log-names__btn').click(function () {
-    logAllOrigNames();
+    // names = readMultipleFilenames();
     // const names = [{
     //   oldFilename: 'testing',
     //   newFilename: 'testing_new',
     // }];
 
-    // prepareDataToSend('/find-file', names, 'video');
+    // console.log('****************');
+    // console.log(names);
+    // console.log('****************');
+    prepareDataToSend('/find-file', readMultipleFilenames(), 'video');
   });
 }
 
@@ -82,7 +85,7 @@ function createContent(names, type) {
   return contentToPass;
 }
 
-function logAllOrigNames() {
+function readMultipleFilenames() {
   $origNamesInput = $('.filesToConv-all-orig-names-input');
 
   var namesArray = $origNamesInput.val().split(`
@@ -107,6 +110,7 @@ function logAllOrigNames() {
   });
 
   console.log(seperatedNamesArray);
+  return seperatedNamesArray;
 }
 
 function validateForms() {
