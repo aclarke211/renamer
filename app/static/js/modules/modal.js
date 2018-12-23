@@ -32,7 +32,7 @@ function showModal(data) {
       closeModal();
     })
     .children()
-    .click(function(e) {
+    .click(function (e) {
       return false;
     });
 
