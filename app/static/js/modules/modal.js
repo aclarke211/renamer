@@ -58,6 +58,12 @@ function createFileElem(file, parentElem) {
   // console.log('CREATE FILE');
   // console.log(file);
   $(parentElem).append(fileElem);
+
+  $('.file-type').each(function () {
+    if ($(this).text() === '') {
+      $(this).remove();
+    }
+  })
 }
 
 function sortFiles(data) {

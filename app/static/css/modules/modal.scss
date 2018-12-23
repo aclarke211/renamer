@@ -94,6 +94,17 @@
           .new_filename {
             font-size: .6rem;
           }
+
+          .file-type {
+            color: darkgreen;
+            border: 2px solid darkgreen;
+            display: inline-flex;
+            font-size: .53rem;
+            margin: .25rem 0;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: .1rem 0.4rem;
+          }
         }
 
       }
