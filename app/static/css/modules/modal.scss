@@ -42,6 +42,9 @@
         padding: .5rem;
         width: 95%;
         flex-direction: column;
+        border: 1px solid red;
+        height: 25rem;
+        overflow-y: auto;
 
         .files {
           display: flex;
@@ -51,7 +54,15 @@
           padding: .5rem;
           flex: 1;
           align-items: center;
+          border: 2px solid green;
           position: relative;
+
+          .files-collection {
+            border: 2px solid red;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            width: 100%;
+          }
         }
 
         .found-files {
@@ -73,15 +84,15 @@
           border: 1px solid darkslategrey;
           padding: .5rem 1rem;
           margin: .5rem;
-          width: 70%;
+          width: 82.25%;
 
           .current_filename {
             font-weight: 600;
-            font-size: 1rem;
+            font-size: .8rem;
           }
 
           .new_filename {
-            font-size: .9rem;
+            font-size: .6rem;
           }
         }
 

@@ -10,9 +10,11 @@ function showModal(data) {
         <div class="returned-files__container">
         <div class="found-files files">
           <h4 class="status-title">FOUND FILES</h4>
-        </div>
+          <div class="files-collection"></div>
+          </div>
           <div class="missing-files files">
-            <h4 class="status-title">MISSING FILES</h4>
+          <h4 class="status-title">MISSING FILES</h4>
+          <div class="files-collection"></div>
           </div>
         </div>
         <div class="btns_container">
@@ -61,9 +63,9 @@ function createFileElem(file, parentElem) {
 function sortFiles(data) {
   data.files.forEach(file => {
     if (file.foundStatus) {
-      createFileElem(file, $('.found-files'));
+      createFileElem(file, $('.found-files .files-collection'));
     } else {
-      createFileElem(file, $('.missing-files'));
+      createFileElem(file, $('.missing-files .files-collection'));
     }
   });
 }
