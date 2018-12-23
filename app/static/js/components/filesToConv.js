@@ -20,7 +20,7 @@ function template(content, allContent) {
 oldFilename_02 newFilename_02</textarea>
           </div>
         </div>
-        <div class="log-names__btn btn">Console Log Names</div>
+        <div class="log-names__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
       </div>
 
 
@@ -43,7 +43,7 @@ oldFilename_02 newFilename_02</textarea>
         </div>
 
         <div class="btns_container">
-          <div class="btn find-single-file-btn">${content.data.singleFile.btns.findFile.text}</div>
+          <div class="btn find-single-file-btn">${content.data.singleFile.btns.findSingleFile.text}</div>
 
         </div>
 

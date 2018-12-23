@@ -36,7 +36,13 @@
       "data": {
         "title": "Files:",
         "multipleFiles": {
-          "subtitle": "Multiple Files"
+          "subtitle": "Multiple Files",
+          "btns": {
+            "findMultiFiles": {
+              "text": "Find Files",
+              "path": "/find-file"
+            }
+          }
         },
         "singleFile": {
           "subtitle": "Single File",
@@ -47,7 +53,7 @@
             "label": "New Filename:"
           },
           "btns": {
-            "findFile": {
+            "findSingleFile": {
               "text": "Find File",
               "path": "/find-file"
             }
