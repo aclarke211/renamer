@@ -42,9 +42,12 @@
         padding: .5rem;
         width: 95%;
         flex-direction: column;
-        border: 1px solid red;
         height: 25rem;
         overflow-y: auto;
+
+        @include tablet {
+          flex-direction: row;
+        }
 
         .files {
           display: flex;
@@ -54,11 +57,9 @@
           padding: .5rem;
           flex: 1;
           align-items: center;
-          border: 2px solid green;
           position: relative;
 
           .files-collection {
-            border: 2px solid red;
             overflow-y: scroll;
             overflow-x: hidden;
             width: 100%;
