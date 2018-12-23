@@ -40,8 +40,8 @@ function createContent(names, type) {
   switch (type) {
     case 'video':
       fileTypes = {
-        mainType: '.mp4',
-        types: ['.m4a', '.avi', '.wmv', '.mkv'],
+        mainType: 'mp4',
+        types: ['m4a', 'avi', 'wmv', 'mkv'],
       };
       break
   }
@@ -77,7 +77,7 @@ function readMultipleFilenames() {
   const seperatedNamesArray = [];
 
   namesArray.forEach(name => {
-    const newNameSet = name.split(` `);
+    const newNameSet = name.split(`	`);
     const newNameObject = {
       oldFilename: '',
       newFilename: '',
@@ -85,8 +85,9 @@ function readMultipleFilenames() {
     newNameObject.oldFilename = newNameSet[0];
     newNameObject.newFilename = newNameSet[1];
 
-
-    seperatedNamesArray.push(newNameObject);
+    if (newNameObject.oldFilename !== '' || newNameObject.newFilename !== undefined) {
+      seperatedNamesArray.push(newNameObject);
+    }
   });
 
   console.log(seperatedNamesArray);
