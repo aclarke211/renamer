@@ -3,4 +3,11 @@
     border: 1px solid lightgrey;
     padding: 1rem;
   }
+
+  &-all-orig-names-input {
+    border: 2px solid blue;
+    height: 8rem;
+    overflow: scroll;
+    white-space: nowrap;
+  }
 }
