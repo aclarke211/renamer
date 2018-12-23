@@ -67,11 +67,3 @@ function sortFiles(data) {
     }
   });
 }
-
-// Need to get proper way to close modal (click outside of it)
-
-// Found files to be sorted by their filetype
-
-// Have a 'rename' button in the modal (the listener/functionality will be handled in 'client.js')
-
-// Close modal button (use jQuery to remove the Modal element from DOM)
