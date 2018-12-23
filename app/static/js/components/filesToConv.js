@@ -15,12 +15,12 @@ function template(content, allContent) {
         <h3 class="${name}-subtitle subtitle">${content.data.multipleFiles.subtitle}</h3>
         <div class="fields__container">
           <div class="field">
-            <label for="${name}-all-orig-names" class="${name}-all-orig-names-label">*ALL ORIG NAMES</label>
+            <label for="${name}-all-orig-names" class="${name}-all-orig-names-label">${content.data.multipleFiles.filenames.label}</label>
             <textarea class="${name}-all-orig-names-input">oldFilename_01 newFileName_01
 oldFilename_02 newFilename_02</textarea>
           </div>
         </div>
-        <div class="log-names__btn btn">Console Log Names</div>
+        <div class="log-names__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
       </div>
 
 
@@ -43,7 +43,7 @@ oldFilename_02 newFilename_02</textarea>
         </div>
 
         <div class="btns_container">
-          <div class="btn find-single-file-btn">${content.data.singleFile.btns.findFile.text}</div>
+          <div class="btn find-single-file-btn">${content.data.singleFile.btns.findSingleFile.text}</div>
 
         </div>
 
