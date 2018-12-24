@@ -45,15 +45,16 @@
         height: 25rem;
         overflow-y: auto;
 
-        @include tablet {
+        @include desktop {
           flex-direction: row;
+          width: 75%;
         }
 
         .files {
           display: flex;
           flex-direction: column;
           border: 1px solid lightgrey;
-          margin: .25rem;
+          margin: .35rem;
           padding: .5rem;
           flex: 1;
           align-items: center;
