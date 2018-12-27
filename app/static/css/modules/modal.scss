@@ -61,7 +61,7 @@
           position: relative;
 
           .files-collection {
-            overflow-y: scroll;
+            overflow-y: auto;
             overflow-x: hidden;
             width: 100%;
           }
@@ -85,7 +85,7 @@
         .file {
           border: 1px solid darkslategrey;
           padding: .5rem 1rem;
-          margin: .5rem;
+          margin: .5rem auto;
           width: 82.25%;
 
           .current_filename {
