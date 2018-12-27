@@ -71,9 +71,6 @@ function readMultipleFilenames() {
   var namesArray = $origNamesInput.val().split(`
 `);
 
-  // console.log($origNamesInput.val());
-  // console.log(namesArray);
-
   const seperatedNamesArray = [];
 
   namesArray.forEach(name => {
@@ -90,7 +87,6 @@ function readMultipleFilenames() {
     }
   });
 
-  console.log(seperatedNamesArray);
   return seperatedNamesArray;
 }
 
