@@ -15,6 +15,8 @@
 
 ## Nice to Have
 
+- Fix issue with components sometimes loading in wrong order.
+
 - Checkbox to set custom output directory.
 
 - Small Icon for multi files container, when hovered show help tool-top to identify how to copy files in from Excel.
