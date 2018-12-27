@@ -5,7 +5,7 @@ function showModal(files) {
   <div class="modal__outer">
     <div class="modal__container">
       <div class="modal__inner">
-        <div class="modal__close">x</div>
+        <div class="modal__close">&times;</div>
         <h3 class="modal-title">Results</h3>
         <div class="returned-files__container">
         <div class="found-files files">

@@ -20,7 +20,17 @@
       cursor: pointer;
       position: absolute;
       top: .5rem;
-      right: .5rem;
+      right: .75rem;
+      font-size: 2.25rem;
+      color: black;
+
+      @include desktop {
+        color: #505050;
+
+        &:hover {
+          color: black;
+        }
+      }
     }
 
     .modal__inner {
