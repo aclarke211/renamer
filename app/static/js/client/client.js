@@ -67,7 +67,7 @@ function createContent(names, type) {
 }
 
 function findPrimaryFolder(filename, defaultFolder) {
-  if (filename.indexOf(' [') !== -1 && filename.indexOf(']') !== -1) {
+  if (filename !== undefined && filename.indexOf(' [') !== -1 && filename.indexOf(']') !== -1) {
     const firstSet = filename.substring(
       filename.indexOf("['") + 2,
       filename.indexOf("']")

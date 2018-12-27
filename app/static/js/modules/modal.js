@@ -18,7 +18,7 @@ function showModal(files) {
           </div>
         </div>
         <div class="btns_container">
-          <div class="modal-btn btn">Rename Files</div>
+          <div class="rename-files-btn btn">Rename Files</div>
         </div>
       </div>
     </div>
@@ -41,6 +41,20 @@ function showModal(files) {
   $('.modal__close').click(() => {
     closeModal();
   });
+
+  if (files.foundFiles.length >= 1 && files.missingFiles.length <= 0) {
+    $('.rename-files-btn').addClass('active');
+  }
+
+  $('.rename-files-btn').click(function() {
+    if (files.missingFiles.length >= 1) {
+      $(this).addClass('invalid');
+      $(this).text('Missing Files Present');
+    } else if (files.foundFiles.length >= 1) {
+      $(this).text('[DEV] Need to send files to server...')
+    }
+  });
+
 }
 
 function closeModal() {

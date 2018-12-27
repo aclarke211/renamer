@@ -144,9 +144,20 @@
       }
     }
 
-    .modal-btn {
+    .rename-files-btn {
       opacity: .4;
       margin: 0;
+
+      &.invalid {
+        background-color: red;
+        border-color: red;
+        color: white;
+        opacity: .75;
+      }
+
+      &.active {
+        opacity: 1;
+      }
     }
 
   }
