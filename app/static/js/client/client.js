@@ -55,6 +55,7 @@ function createContent(names, type) {
       newFilename: name.newFilename,
       fileTypes: fileTypes,
       fileType: '',
+      folder: findPrimaryFolder(name.newFilename, '_RE'),
       srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.'
     }
     files.push(file);
@@ -63,6 +64,21 @@ function createContent(names, type) {
   contentToPass.files = files;
 
   return contentToPass;
+}
+
+function findPrimaryFolder(filename, defaultFolder) {
+  if (filename.indexOf(' [') !== -1 && filename.indexOf(']') !== -1) {
+    const firstSet = filename.substring(
+      filename.indexOf("['") + 2,
+      filename.indexOf("']")
+    );
+
+    const folderName = firstSet.substring(0, firstSet.indexOf(`'`, 1));
+
+    return `${defaultFolder}/${folderName}`;
+  } else {
+    return defaultFolder;
+  }
 }
 
 function readMultipleFilenames() {
@@ -135,8 +151,8 @@ function sendData(url, contentToPass) {
 
     success: function (data) {
       console.log('Data successfully sent');
-      // console.log('Returned Content: ');
-      // console.log(data);
+      console.log('Returned Content: ');
+      console.log(data);
 
       const files = {};
       files.foundFiles = data.files.filter(file => file.foundStatus === true);
