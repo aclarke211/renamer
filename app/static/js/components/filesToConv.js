@@ -17,7 +17,9 @@ function template(content, allContent) {
           <div class="field">
             <label for="${name}-all-orig-names" class="${name}-all-orig-names-label">${content.data.multipleFiles.filenames.label}</label>
             <textarea class="${name}-all-orig-names-input">oldFilename_01	newFileName_01
-oldFilename_02	newFilename_02</textarea>
+oldFilename_02	newFilename_02 ['Comedy' - 'Romcom'] ['Drama']
+oldFilename_03	newFilename_03 ['^^Art' - 'Project'] ['Horror']
+oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
           </div>
         </div>
         <div class="log-names__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
