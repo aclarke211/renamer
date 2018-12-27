@@ -2,16 +2,21 @@
 
 ## Next Steps
 
-- Message in File Container if empty.
+- Data returned from server to be sorted into **2 arrays**:<br>
+  - (Found Files and Missing Files).
 
-- Show 'Total Files' (+ how many in each File Container).
+- Message in File Container if empty:<br>
+  - (check both of the arrays to see if any are empty).
 
-- Have folder in file data
-  (default "_c")
+- Show **'Total Files'**:<br>
+  - (+ how many in each File Container).
 
-- Activate 'rename' button if no missing files and at least 1 found file.
+- Have folder in file data:<br>
+  - (default "_c")
 
-- Revert button after renaming
-  (Option to revert all or select certain files via checkboxes).
+- Activate **'rename'** button if no missing files and at least 1 found file.
+
+- Revert button after renaming:<br>
+  - (Option to revert all or select certain files via checkboxes).
 
 - Show renamed files 1 by 1 and progress bar.
