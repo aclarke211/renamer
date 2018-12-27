@@ -36,3 +36,10 @@ function checkFilesExist(content) {
   // console.log(content);
   return content;
 }
+
+module.exports.renameFile = (req, res) => {
+  let file = req.body;
+  console.log('FILE TO RENAME RECEIVED:')
+  console.log(file);
+  res.json(file);
+};

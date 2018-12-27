@@ -152,13 +152,20 @@ function sendData(url, contentToPass) {
     success: function (data) {
       console.log('Data successfully sent');
       console.log('Returned Content: ');
-      console.log(data);
+      // console.log(data);
 
-      const files = {};
-      files.foundFiles = data.files.filter(file => file.foundStatus === true);
-      files.missingFiles = data.files.filter(file => file.foundStatus === false);
+      if (url === '/find-file') {
+        const files = {};
+        files.foundFiles = data.files.filter(file => file.foundStatus === true);
+        files.missingFiles = data.files.filter(file => file.foundStatus === false);
+        createResultsModal(files);
+      }
 
-      createResultsModal(files);
+      if (url === '/rename-file') {
+        console.log('RENAMED FILE:')
+        console.log(data);
+      }
+
     },
 
     error: function () {
@@ -168,11 +175,25 @@ function sendData(url, contentToPass) {
 
 }
 
-function createResultsModal(data) {
+function createResultsModal(files) {
   $.when(
     $.getScript('./app/static/js/modules/modal.js', function () {
-      showModal(data);
+      showModal(files);
     })).then(function () {
-    // Add click listener to 'rename' button in modal
+      $('.rename-files-btn').click(function() {
+        if (files.missingFiles.length >= 1) {
+          $(this).addClass('invalid');
+          $(this).text('Missing Files Present');
+        } else if (files.foundFiles.length >= 1) {
+
+          // Send off files to server
+          files.foundFiles.forEach((file) => {
+              sendData('/rename-file', file);
+            });
+
+        }
+      });
   });
 }
+
+

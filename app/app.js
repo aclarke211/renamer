@@ -23,6 +23,7 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('index'))
   .post("/find-file", Renamer.findFile)
+  .post("/rename-file", Renamer.renameFile)
   .listen(PORT, () => {
     console.log(colors.black.bgGreen('RENAMER running...'));
     console.log(colors.yellow('Listening on:'));

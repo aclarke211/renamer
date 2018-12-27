@@ -4,6 +4,8 @@
 
 - Rename files by looping through found files array and passing the files to server 1 by 1.
 
+- Rename 'log-names_btn' to 'find-multi-files__btn'.
+
 - Revert button after renaming:<br>
   - (Option to revert all or select certain files via checkboxes).
 
