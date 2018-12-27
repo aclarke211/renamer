@@ -180,20 +180,20 @@ function createResultsModal(files) {
     $.getScript('./app/static/js/modules/modal.js', function () {
       showModal(files);
     })).then(function () {
-      $('.rename-files-btn').click(function() {
-        if (files.missingFiles.length >= 1) {
-          $(this).addClass('invalid');
-          $(this).text('Missing Files Present');
-        } else if (files.foundFiles.length >= 1) {
-
-          // Send off files to server
-          files.foundFiles.forEach((file) => {
-              sendData('/rename-file', file);
-            });
-
+    $('.rename-files-btn').click(function () {
+      if (files.missingFiles.length >= 1) {
+        $(this).addClass('invalid');
+        $(this).text('Missing Files Present');
+      } else if (files.foundFiles.length >= 1) {
+        // Send off files to server 1 by 1
+        for (var i = 0; i < files.foundFiles.length; i++) {
+          (function (index) {
+            setTimeout(function () {
+              sendData('/rename-file', files.foundFiles[index])
+            }, i * 1000);
+          })(i);
         }
-      });
+      }
+    });
   });
 }
-
-
