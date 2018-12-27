@@ -17,4 +17,4 @@
 
 - Show renamed files 1 by 1 and progress bar.
 
-- Third accordian to search for files in a directory and sort them into folders bases on tags in filenames.
+- Third accordian to search for files in a directory and sort them into folders based on tags in filenames.
