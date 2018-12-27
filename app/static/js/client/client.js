@@ -142,9 +142,7 @@ function sendData(url, contentToPass) {
       files.foundFiles = data.files.filter(file => file.foundStatus === true);
       files.missingFiles = data.files.filter(file => file.foundStatus === false);
 
-      console.log(files);
-
-      createResultsModal(data);
+      createResultsModal(files);
     },
 
     error: function () {

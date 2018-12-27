@@ -1,4 +1,4 @@
-function showModal(data) {
+function showModal(files) {
   closeModal();
 
   const modal = `
@@ -27,7 +27,7 @@ function showModal(data) {
   `;
 
   $('.main__container').append(modal);
-  sortFiles(data);
+  sortFiles(files);
 
   $('.modal__outer')
     .click(() => {
@@ -66,12 +66,20 @@ function createFileElem(file, parentElem) {
   })
 }
 
-function sortFiles(data) {
-  data.files.forEach(file => {
-    if (file.foundStatus) {
+function sortFiles(files) {
+  if (files.foundFiles.length <= 0) {
+    $('.found-files .files-collection').append(`<p class="no-files-msg">No files found :(</p>`)
+  } else {
+    files.foundFiles.forEach((file) => {
       createFileElem(file, $('.found-files .files-collection'));
-    } else {
+    });
+  }
+
+  if (files.missingFiles.length <= 0) {
+    $('.missing-files .files-collection').append(`<p class="no-files-msg">No missing files :)</p>`)
+  } else {
+    files.missingFiles.forEach((file) => {
       createFileElem(file, $('.missing-files .files-collection'));
-    }
-  });
+    });
+  }
 }
