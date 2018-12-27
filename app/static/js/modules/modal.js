@@ -82,4 +82,17 @@ function sortFiles(files) {
       createFileElem(file, $('.missing-files .files-collection'));
     });
   }
+
+  showTotals(files);
+}
+
+function showTotals(files) {
+  const totalAllFiles = files.foundFiles.length + files.missingFiles.length;
+  $('.modal-title').after(createTotalElem(totalAllFiles, 'total-files', 'Total Files'));
+}
+
+function createTotalElem(totalNum, className, totalText) {
+  return `
+    <p class="total ${className}">${totalText}: <span class="total-num">${totalNum}</span></p>
+  `
 }

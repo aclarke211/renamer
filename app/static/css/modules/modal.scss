@@ -46,6 +46,17 @@
         margin: 2rem auto 0;
       }
 
+      .total {
+        color: orange;
+        font-weight: 600;
+        text-align: center;
+        margin-top: .5rem;
+
+        .total-num {
+          color: orangered;
+        }
+      }
+
       .returned-files__container {
         display: flex;
         margin: 2rem auto;
