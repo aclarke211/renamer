@@ -135,8 +135,14 @@ function sendData(url, contentToPass) {
 
     success: function (data) {
       console.log('Data successfully sent');
-      console.log('Returned Content: ');
-      console.log(data);
+      // console.log('Returned Content: ');
+      // console.log(data);
+
+      const files = {};
+      files.foundFiles = data.files.filter(file => file.foundStatus === true);
+      files.missingFiles = data.files.filter(file => file.foundStatus === false);
+
+      console.log(files);
 
       createResultsModal(data);
     },
