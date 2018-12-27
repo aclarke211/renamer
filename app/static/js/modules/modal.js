@@ -89,6 +89,14 @@ function sortFiles(files) {
 function showTotals(files) {
   const totalAllFiles = files.foundFiles.length + files.missingFiles.length;
   $('.modal-title').after(createTotalElem(totalAllFiles, 'total-files', 'Total Files'));
+
+  if (files.foundFiles.length >= 1) {
+    $('.found-files .status-title').after(createTotalElem(files.foundFiles.length, 'total-sub-files', 'Total Found Files'));
+  }
+
+  if (files.missingFiles.length >= 1) {
+    $('.missing-files .status-title').after(createTotalElem(files.missingFiles.length, 'total-sub-files', 'Total Missing Files'));
+  }
 }
 
 function createTotalElem(totalNum, className, totalText) {

@@ -2,9 +2,6 @@
 
 ## Next Steps
 
-- Show **'Total Files'**:<br>
-  - (+ how many in each File Container).
-
 - Have folder in file data:<br>
   - (default "_c")
 
