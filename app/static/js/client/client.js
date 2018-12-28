@@ -151,7 +151,7 @@ function sendData(url, contentToPass) {
 
     success: function (data) {
       console.log('Data successfully sent');
-      console.log('Returned Content: ');
+      // console.log('Returned Content: ');
       // console.log(data);
 
       if (url === '/find-file') {

@@ -33,14 +33,16 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
             <label for="${name}-orig-name" class="${name}-text">${
     content.data.singleFile.orig_filename.label
   }</label>
-            <input id="${name}-orig-name" class="${name}-orig-name" type="text" placeholder="Original Filename">
+            <input id="${name}-orig-name" class="${name}-orig-name" type="text"
+            placeholder="Original Filename" value="vid1">
           </div>
 
           <div class="field">
             <label for="${name}-new-name" class="${name}-text">${
     content.data.singleFile.new_filename.label
   }</label>
-            <input id="${name}-new-name" class="${name}-new-name" type="text" placeholder="New Filename">
+            <input id="${name}-new-name" class="${name}-new-name" type="text"
+            placeholder="New Filename" value="New Video 1">
           </div>
         </div>
 
