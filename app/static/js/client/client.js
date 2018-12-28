@@ -230,7 +230,8 @@ function updateRenamedFilesinModal(file) {
 
   const completedFile = `
     <p class="renamed-file">Renamed:<br>
-    "${file.oldFilename}" to "${file.newFilename}"</p>
+    "${file.oldFilename}" to "${file.newFilename}"<br>
+    in "${file.folder}"</p>
   `;
 
   $('.renamed-files__container').append(completedFile);
