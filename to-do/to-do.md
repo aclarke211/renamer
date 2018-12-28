@@ -1,6 +1,6 @@
 # To-Do [Renamer]
 
-## Next Steps
+## Steps
 
 - Rename files by looping through found files array and passing the files to server 1 by 1.
 
@@ -14,10 +14,12 @@
 
 ## Nice to Have
 
-- Fix issue with components sometimes loading in wrong order.
-
 - Checkbox to set custom output directory.
 
 - Modal content (i.e. /find-files) needs to be in **content.json** file.
 
 - Small Icon for multi files container, when hovered show help tool-top to identify how to copy files in from Excel.
+
+## Bugs
+
+- Fix issue with components sometimes loading in wrong order.
