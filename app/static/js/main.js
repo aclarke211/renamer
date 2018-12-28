@@ -15,7 +15,7 @@ $.getJSON('./app/content/content.json', function (content) {
       // Read the JS file for each of the components
       $.getScript(`./app/static/js/components/${component.componentName}.js`, function () {
         init(content.content, component, $appContainer);
-        console.log(`Added ${component.componentName}`);
+        // console.log(`Added ${component.componentName}`);
       });
     });
     $.getScript('./app/static/js/client/client.js', function () {
