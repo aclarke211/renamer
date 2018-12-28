@@ -118,7 +118,10 @@ function modalRenameStatus(content) {
 
   const modalRenameInner = `
     <h3 class="modal-title">${content.modules.modal.renameStatus.title}</h3>
-    <div class="progress__container"></div>
+    <div class="progress__container">
+      <p class="progress-title">${content.modules.modal.renameStatus.progressText}</p>
+      <div class="progress-values"></div>
+    </div>
     <div class="renamed-files__container"></div>
   `;
 

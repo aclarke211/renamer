@@ -6,8 +6,6 @@
 
 - Rename single file in server after being passed all files from client.
 
-- Show renamed files 1 by 1 and progress bar.
-
 - Revert button after renaming:
 
   - (Option to revert all or select certain files via checkboxes).
@@ -16,6 +14,8 @@
   - Need to use **fs.stat** or similar to get the filetype of each file read.
 
 ## Nice to Have
+
+- Visual progress bar when renaming files, not just [2 / 10] etc.
 
 - Generate video thumbnail (.gif) for found files.
 

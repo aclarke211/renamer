@@ -100,7 +100,8 @@
         }
       },
       "renameStatus": {
-        "title": "Rename Files"
+        "title": "Rename Files",
+        "progressText": "Progress:"
       }
     }
   }

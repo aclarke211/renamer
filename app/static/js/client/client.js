@@ -167,6 +167,7 @@ function sendData(path, contentToPass) {
       }
 
       if (path === appContent.paths.renameFiles) {
+
         updateRenamedFilesinModal(data);
 
         console.log('Renamed File:');
@@ -198,17 +199,19 @@ function createResultsModal(files) {
           modalRenameStatus(appContent);
         });
         // Send off files to server 1 by 1
-        for (var i = 0; i < files.foundFiles.length; i++) {
-          (function (index) {
-            setTimeout(function () {
-              files.foundFiles[index].fileCount = {
-                current: index + 1,
-                total: files.foundFiles.length
-              };
-              sendData(appContent.paths.renameFiles, files.foundFiles[index])
-            }, i * 1000);
-          })(i);
-        }
+        setTimeout(() => {
+          for (var i = 0; i < files.foundFiles.length; i++) {
+            (function (index) {
+              setTimeout(function () {
+                files.foundFiles[index].fileCount = {
+                  current: index + 1,
+                  total: files.foundFiles.length
+                };
+                sendData(appContent.paths.renameFiles, files.foundFiles[index])
+              }, i * 1000);
+            })(i);
+          }
+        }, 1000);
       }
 
     });
@@ -216,8 +219,18 @@ function createResultsModal(files) {
 }
 
 function updateRenamedFilesinModal(file) {
+
+  const progValues = `
+    <div class="progress-values">
+      <p>[ ${file.fileCount.current} / ${file.fileCount.total} ]</p>
+    </div>
+  `;
+
+  $('.progress-values').replaceWith(progValues);
+
   const completedFile = `
-    <p class="renamed-file">Completed Rename: "${file.oldFilename}" to "${file.newFilename}"</p>
+    <p class="renamed-file">Completed Rename:<br>
+    "${file.oldFilename}" to "${file.newFilename}"</p>
   `;
 
   $('.renamed-files__container').append(completedFile);
