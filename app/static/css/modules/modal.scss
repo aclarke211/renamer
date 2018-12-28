@@ -142,23 +142,51 @@
         }
 
       }
+
+      .rename-files-btn {
+        opacity: .4;
+        margin: 0;
+
+        &.invalid {
+          background-color: red;
+          border-color: red;
+          color: white;
+          opacity: .75;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+      }
     }
 
-    .rename-files-btn {
-      opacity: .4;
-      margin: 0;
+    .progress__container {
+      @include flex;
+      flex-direction: column;
+      margin: 1rem 0;
+    }
 
-      &.invalid {
-        background-color: red;
-        border-color: red;
-        color: white;
-        opacity: .75;
-      }
+    .renamed-files__container {
+      height: 20rem;
+      overflow-x: hidden;
+      overflow-y: auto;
 
-      &.active {
-        opacity: 1;
+      .renamed-file {
+        margin: .5rem 0;
+        border: 1px solid gainsboro;
+        padding: .5rem;
       }
     }
+
+    .completed-msg__container {
+      margin-top: 1rem;
+
+      .completed-msg {
+        color: forestgreen;
+        font-size: 1rem;
+      }
+    }
+
 
   }
 }
