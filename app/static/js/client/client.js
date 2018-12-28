@@ -154,7 +154,7 @@ function sendData(path, contentToPass) {
     },
 
     success: function (data) {
-      console.log('Data successfully sent');
+      // console.log('Data successfully sent');
       // console.log('Returned Content: ');
       // console.log(data);
 
@@ -163,9 +163,11 @@ function sendData(path, contentToPass) {
         files.foundFiles = data.files.filter(file => file.foundStatus === true);
         files.missingFiles = data.files.filter(file => file.foundStatus === false);
         createResultsModal(files);
+        console.log('Files successfully found');
       }
 
       if (path === appContent.paths.renameFiles) {
+        console.log('Renamed File:');
         console.log(`
           [ ${data.fileCount.current} / ${data.fileCount.total} ] Renamed "${data.oldFilename}" to "${data.newFilename}"
         `);
