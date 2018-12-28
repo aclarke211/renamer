@@ -59,7 +59,7 @@ function createContent(names, type) {
       newFilename: name.newFilename,
       fileTypes: fileTypes,
       fileType: '',
-      folder: findPrimaryFolder(name.newFilename, '_RE'),
+      folder: findPrimaryFolder(name.newFilename, appContent.defaults.folderName),
       srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.'
     }
     files.push(file);

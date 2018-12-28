@@ -1,4 +1,7 @@
 {
+  "defaults": {
+    "folderName": "_re"
+  },
   "paths": {
     "findFiles": "/find-file",
     "renameFiles": "/rename-file"
