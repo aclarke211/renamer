@@ -2,11 +2,7 @@
 
 ## Steps
 
-- Rename single file in server after being passed all files from client.
-
-- Revert button after renaming:
-
-  - (Option to revert all or select certain files via checkboxes).
+- Delete empy directories and default rename folder after reverting files.
 
 - Third accordian to search for files in a directory and sort them into folders based on tags in filenames.
   - Need to use **fs.stat** or similar to get the filetype of each file read.

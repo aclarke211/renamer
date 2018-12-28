@@ -179,6 +179,12 @@ function sendData(path, contentToPass, allFiles) {
         `);
       }
 
+      if (path === appContent.paths.revertFiles) {
+        $.getScript('./app/static/js/modules/modal.js', function () {
+          revertComplete(appContent);
+        });
+      }
+
     },
 
     error: function () {

@@ -107,6 +107,9 @@
       "renameStatus": {
         "title": "Rename Files",
         "progressText": "Progress:"
+      },
+      "revertedStatus": {
+        "title": "Files Reverted"
       }
     }
   }

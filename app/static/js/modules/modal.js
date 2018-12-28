@@ -123,9 +123,10 @@ function modalRenameStatus(content) {
     <div class="progress__container">
       <p class="progress-title">${content.modules.modal.renameStatus.progressText}</p>
       <div class="progress-values">
-      <p class="progress-fraction"></p>
-      <div class="progress-bar">
-        <div class="progress-bar__inner"></div>
+        <p class="progress-fraction"></p>
+        <div class="progress-bar">
+          <div class="progress-bar__inner"></div>
+        </div>
       </div>
     </div>
     <div class="renamed-files__container"></div>
@@ -152,4 +153,25 @@ function renameComplete(revertableContent) {
     closeModal();
   });
 
+}
+
+function revertComplete(content) {
+  $('.modal__inner').children().not('.completed-msg__container').remove();
+  $('.completed-msg__container').children().not('.btns_container').remove();
+  $('.completed-msg__container .btns_container').children().not('.complete-close-btn').remove();
+
+  $('.modal__outer')
+    .click(() => {
+      closeModal();
+    })
+    .children()
+    .click(function (e) {
+      return false;
+    });
+
+  const modalRevertedInner = `
+    <h3 class="modal-title">${content.modules.modal.revertedStatus.title}</h3>
+  `;
+
+  $('.modal__inner').prepend(modalRevertedInner);
 }
