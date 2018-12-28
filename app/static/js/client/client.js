@@ -31,9 +31,9 @@ function addListeners(content) {
   });
 }
 
-function prepareDataToSend(renamerExport, names, type, form) {
+function prepareDataToSend(path, names, type, form) {
   if (validateForms(form)) {
-    sendData(renamerExport, createContent(names, type));
+    sendData(path, createContent(names, type));
   }
 }
 
@@ -138,9 +138,9 @@ function smoothScrollElement(className) {
 
 }
 
-function sendData(url, contentToPass) {
+function sendData(path, contentToPass) {
   $.ajax({
-    url: url,
+    url: path,
     type: 'POST',
     dataType: 'json',
     data: JSON.stringify(contentToPass),
@@ -158,16 +158,17 @@ function sendData(url, contentToPass) {
       // console.log('Returned Content: ');
       // console.log(data);
 
-      if (url === appContent.paths.findFiles) {
+      if (path === appContent.paths.findFiles) {
         const files = {};
         files.foundFiles = data.files.filter(file => file.foundStatus === true);
         files.missingFiles = data.files.filter(file => file.foundStatus === false);
         createResultsModal(files);
       }
 
-      if (url === appContent.paths.renameFiles) {
-        console.log('RENAMED FILE:')
-        console.log(data);
+      if (path === appContent.paths.renameFiles) {
+        console.log(`
+          [ ${data.fileCount.current} / ${data.fileCount.total} ] Renamed "${data.oldFilename}" to "${data.newFilename}"
+        `);
       }
 
     },
@@ -193,6 +194,11 @@ function createResultsModal(files) {
         for (var i = 0; i < files.foundFiles.length; i++) {
           (function (index) {
             setTimeout(function () {
+              files.foundFiles[index].fileCount = {
+                current: index + 1,
+                total: files.foundFiles.length
+              };
+
               sendData(appContent.paths.renameFiles, files.foundFiles[index])
             }, i * 1000);
           })(i);
