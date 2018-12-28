@@ -1,24 +1,26 @@
-function showModal(files) {
+function showModal(files, content) {
   closeModal();
+
+  // console.log(content);
 
   const modal = `
   <div class="modal__outer">
     <div class="modal__container">
       <div class="modal__inner">
-        <div class="modal__close">&times;</div>
-        <h3 class="modal-title">Results</h3>
+        <div class="modal__close">${content.modules.modal.btns.closeBtn.text}</div>
+        <h3 class="modal-title">${content.modules.modal.title}</h3>
         <div class="returned-files__container">
         <div class="found-files files">
-          <h4 class="status-title">FOUND FILES</h4>
+          <h4 class="status-title">${content.modules.modal.files.found.title}</h4>
           <div class="files-collection"></div>
           </div>
           <div class="missing-files files">
-          <h4 class="status-title">MISSING FILES</h4>
+          <h4 class="status-title">${content.modules.modal.files.missing.title}</h4>
           <div class="files-collection"></div>
           </div>
         </div>
         <div class="btns_container">
-          <div class="rename-files-btn btn">Rename Files</div>
+          <div class="${content.modules.modal.btns.findFilesBtn.className} btn">${content.modules.modal.btns.findFilesBtn.text}</div>
         </div>
       </div>
     </div>
@@ -43,7 +45,7 @@ function showModal(files) {
   });
 
   if (files.foundFiles.length >= 1 && files.missingFiles.length <= 0) {
-    $('.rename-files-btn').addClass('active');
+    $(`.${content.modules.modal.btns.findFilesBtn.className}`).addClass('active');
   }
 }
 

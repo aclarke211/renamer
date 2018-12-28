@@ -1,4 +1,8 @@
-function addListeners() {
+var appContent;
+
+function addListeners(content) {
+  appContent = content;
+  console.log(appContent);
   // Select box for 'Source Directory'
   $('#srcDirectory-frequent').change(function () {
     $('.srcDirectory-path').val(
@@ -178,9 +182,9 @@ function sendData(url, contentToPass) {
 function createResultsModal(files) {
   $.when(
     $.getScript('./app/static/js/modules/modal.js', function () {
-      showModal(files);
+      showModal(files, appContent);
     })).then(function () {
-    $('.rename-files-btn').click(function () {
+    $(`.${appContent.modules.modal.btns.findFilesBtn.className}`).click(function () {
       if (files.missingFiles.length >= 1) {
         $(this).addClass('invalid');
         $(this).text('Missing Files Present');

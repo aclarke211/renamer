@@ -1,5 +1,5 @@
 {
-  "content": [{
+  "components": [{
       "componentName": "header",
       "data": {
         "text": "Express Node.js"
@@ -74,5 +74,28 @@
         "text": "Options:"
       }
     }
-  ]
+  ],
+  "modules": {
+    "modal": {
+      "title": "Rename Files",
+      "btns": {
+        "closeBtn": {
+          "text": "&times;"
+        },
+        "findFilesBtn": {
+          "className": "rename-files-btn",
+          "text": "Rename Files",
+          "path": "/rename-files"
+        }
+      },
+      "files": {
+        "found": {
+          "title": "Found Files"
+        },
+        "missing": {
+          "title": "Missing Files"
+        }
+      }
+    }
+  }
 }
