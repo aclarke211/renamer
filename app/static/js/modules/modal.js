@@ -122,7 +122,11 @@ function modalRenameStatus(content) {
     <h3 class="modal-title">${content.modules.modal.renameStatus.title}</h3>
     <div class="progress__container">
       <p class="progress-title">${content.modules.modal.renameStatus.progressText}</p>
-      <div class="progress-values"></div>
+      <div class="progress-values">
+      <p class="progress-fraction"></p>
+      <div class="progress-bar">
+        <div class="progress-bar__inner"></div>
+      </div>
     </div>
     <div class="renamed-files__container"></div>
     <div class="completed-msg__container"></div>
