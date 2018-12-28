@@ -79,22 +79,24 @@
   ],
   "modules": {
     "modal": {
-      "title": "Rename Files",
-      "btns": {
-        "closeBtn": {
-          "text": "&times;"
+      "findStatus": {
+        "title": "Files",
+        "btns": {
+          "closeBtn": {
+            "text": "&times;"
+          },
+          "findFilesBtn": {
+            "className": "rename-files-btn",
+            "text": "Rename Files"
+          }
         },
-        "findFilesBtn": {
-          "className": "rename-files-btn",
-          "text": "Rename Files"
-        }
-      },
-      "files": {
-        "found": {
-          "title": "Found Files"
-        },
-        "missing": {
-          "title": "Missing Files"
+        "files": {
+          "found": {
+            "title": "Found Files"
+          },
+          "missing": {
+            "title": "Missing Files"
+          }
         }
       }
     }
