@@ -205,7 +205,11 @@ function createResultsModal(files) {
             }, i * 1000);
           })(i);
         }
+        $.getScript('./app/static/js/modules/modal.js', function () {
+          modalRenameStatus(appContent);
+        });
       }
+
     });
   });
 }

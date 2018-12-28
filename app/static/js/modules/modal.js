@@ -1,8 +1,6 @@
 function showModal(files, content) {
   closeModal();
 
-  // console.log(content);
-
   const modal = `
   <div class="modal__outer">
     <div class="modal__container">
@@ -109,4 +107,19 @@ function createTotalElem(totalNum, className, totalText) {
   return `
     <p class="total ${className}">${totalText}: <span class="total-num">${totalNum}</span></p>
   `
+}
+
+function clearModalInner() {
+  $('.modal__inner').children().not('.modal__close').remove();
+}
+
+function modalRenameStatus(content) {
+  clearModalInner();
+
+  const modalRenameInner = `
+    <h3 class="modal-title">${content.modules.modal.renameStatus.title}</h3>
+  `;
+
+  $('.modal__inner').append(modalRenameInner);
+
 }
