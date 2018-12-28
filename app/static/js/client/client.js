@@ -190,7 +190,7 @@ function createResultsModal(files) {
     $.getScript('./app/static/js/modules/modal.js', function () {
       showModal(files, appContent);
     })).then(function () {
-    $(`.${appContent.modules.modal.findStatus.btns.findFilesBtn.className}`).click(function () {
+    $(`.${appContent.modules.modal.findStatus.btns.renameFilesBtn.className}`).click(function () {
       if (files.missingFiles.length >= 1) {
         $(this).addClass('invalid');
         $(this).text('Missing Files Present');

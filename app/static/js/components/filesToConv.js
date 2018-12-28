@@ -22,7 +22,9 @@ vid3	newFilename_03 ['^^Art' - 'Project'] ['Horror']
 oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
           </div>
         </div>
-        <div class="find-multi-files__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
+        <div class="btns_container">
+          <div class="find-multi-files__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
+        </div>
       </div>
 
 
@@ -48,7 +50,6 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
 
         <div class="btns_container">
           <div class="btn find-single-file-btn">${content.data.singleFile.btns.findSingleFile.text}</div>
-
         </div>
 
 

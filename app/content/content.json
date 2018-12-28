@@ -85,7 +85,7 @@
           "closeBtn": {
             "text": "&times;"
           },
-          "findFilesBtn": {
+          "renameFilesBtn": {
             "className": "rename-files-btn",
             "text": "Rename Files"
           }

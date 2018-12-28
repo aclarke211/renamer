@@ -18,7 +18,7 @@ function showModal(files, content) {
           </div>
         </div>
         <div class="btns_container">
-          <div class="${content.modules.modal.findStatus.btns.findFilesBtn.className} btn">${content.modules.modal.findStatus.btns.findFilesBtn.text}</div>
+          <div class="${content.modules.modal.findStatus.btns.renameFilesBtn.className} btn">${content.modules.modal.findStatus.btns.renameFilesBtn.text}</div>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@ function showModal(files, content) {
   });
 
   if (files.foundFiles.length >= 1 && files.missingFiles.length <= 0) {
-    $(`.${content.modules.modal.findStatus.btns.findFilesBtn.className}`).addClass('active');
+    $(`.${content.modules.modal.findStatus.btns.renameFilesBtn.className}`).addClass('active');
   }
 }
 
@@ -136,7 +136,9 @@ function renameComplete() {
   const completedMsg = `
       <p class="completed-msg">!! RENAMING COMPLETE !!</p>
 
-      <div class="btn complete-close-btn">CLOSE</div>
+      <div class="btns_container">
+        <div class="btn complete-close-btn">CLOSE</div>
+      </div>
     `;
 
   $('.completed-msg__container').append(completedMsg);

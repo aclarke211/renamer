@@ -2,8 +2,6 @@
 
 ## Steps
 
-- Rename modal button 'find files btn' to 'rename files btn' in content.json.
-
 - Rename single file in server after being passed all files from client.
 
 - Revert button after renaming:
