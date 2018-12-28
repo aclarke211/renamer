@@ -236,10 +236,8 @@ function updateRenamedFilesinModal(file) {
   $('.renamed-files__container').append(completedFile);
 
   if (file.fileCount.current === file.fileCount.total) {
-    const completedMsg = `
-      <p class="completed-msg">!! RENAMING COMPLETE !!</p>
-    `;
-
-    $('.completed-msg__container').append(completedMsg);
+    $.getScript('./app/static/js/modules/modal.js', function () {
+      renameComplete();
+    });
   }
 }

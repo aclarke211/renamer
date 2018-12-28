@@ -109,12 +109,14 @@ function createTotalElem(totalNum, className, totalText) {
   `
 }
 
-function clearModalInner() {
-  $('.modal__inner').children().not('.modal__close').remove();
+function prepareModalForRenaming() {
+  $('.modal__inner').children().remove();
+
+  $('.modal__outer').unbind('click');
 }
 
 function modalRenameStatus(content) {
-  clearModalInner();
+  prepareModalForRenaming();
 
   const modalRenameInner = `
     <h3 class="modal-title">${content.modules.modal.renameStatus.title}</h3>
@@ -128,4 +130,18 @@ function modalRenameStatus(content) {
 
   $('.modal__inner').append(modalRenameInner);
 
+}
+
+function renameComplete() {
+  const completedMsg = `
+      <p class="completed-msg">!! RENAMING COMPLETE !!</p>
+
+      <div class="btn complete-close-btn">CLOSE</div>
+    `;
+
+  $('.completed-msg__container').append(completedMsg);
+
+  $('.complete-close-btn').click(() => {
+    closeModal();
+  });
 }
