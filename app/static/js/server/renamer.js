@@ -62,7 +62,12 @@ module.exports.renameFile = (req, res) => {
 module.exports.revertFiles = (req, res) => {
   let files = req.body
 
-  console.log(files);
+  files.forEach((file) => {
+    fs.rename(`${file.srcDir}/${file.folder}/${file.newFilename}.${file.fileType}`, `${file.srcDir}/${file.oldFilename}.${file.fileType}`, function (err) {
+      if (err) throw err;
+      console.log(`Reverted file "${file.newFilename}" to "${file.oldFilename}"`);
+    })
+  });
 
   res.json(files);
 };
