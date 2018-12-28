@@ -167,6 +167,8 @@ function sendData(path, contentToPass) {
       }
 
       if (path === appContent.paths.renameFiles) {
+        updateRenamedFilesinModal(data);
+
         console.log('Renamed File:');
         console.log(`
           [ ${data.fileCount.current} / ${data.fileCount.total} ] Renamed "${data.oldFilename}" to "${data.newFilename}"
@@ -192,6 +194,9 @@ function createResultsModal(files) {
         $(this).addClass('invalid');
         $(this).text('Missing Files Present');
       } else if (files.foundFiles.length >= 1) {
+        $.getScript('./app/static/js/modules/modal.js', function () {
+          modalRenameStatus(appContent);
+        });
         // Send off files to server 1 by 1
         for (var i = 0; i < files.foundFiles.length; i++) {
           (function (index) {
@@ -200,16 +205,20 @@ function createResultsModal(files) {
                 current: index + 1,
                 total: files.foundFiles.length
               };
-
               sendData(appContent.paths.renameFiles, files.foundFiles[index])
             }, i * 1000);
           })(i);
         }
-        $.getScript('./app/static/js/modules/modal.js', function () {
-          modalRenameStatus(appContent);
-        });
       }
 
     });
   });
+}
+
+function updateRenamedFilesinModal(file) {
+  const completedFile = `
+    <p class="renamed-file">Completed Rename: "${file.oldFilename}" to "${file.newFilename}"</p>
+  `;
+
+  $('.renamed-files__container').append(completedFile);
 }
