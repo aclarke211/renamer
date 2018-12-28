@@ -14,6 +14,6 @@
 
 ## Nice to Have
 
-- Checkbox to set custom output directory.
+- Note in page to say files will be renamed and sorted in to folders inside the Source Directory.
 
 - Small Icon for multi files container, when hovered show help tool-top to identify how to copy files in from Excel.
