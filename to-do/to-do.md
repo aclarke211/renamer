@@ -20,6 +20,4 @@
   - Thumbnails will be stored in a directory within the app.
   - This directory will need to be cleaned on each run to remove old/unneeded thumbnails.
 
-- Note in page to say files will be renamed and sorted in to folders inside the Source Directory.
-
 - Small Icon for multi files container, when hovered show help tool-top to identify how to copy files in from Excel.

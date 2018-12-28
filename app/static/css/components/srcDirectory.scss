@@ -1,15 +1,26 @@
 .srcDirectory {
-
   &__container {
     @include flex;
-
     border: 1px solid silver;
     padding: 2rem 1rem;
     margin: 1rem auto;
+    flex-direction: column;
   }
 
   &-path {
     position: relative;
   }
+}
 
+.output-msg__container {
+  @include flex;
+  color: #505050;
+
+  .output-msg {
+    font-size: .75rem;
+
+    span {
+      font-weight: 600;
+    }
+  }
 }

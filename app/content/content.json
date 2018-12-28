@@ -16,6 +16,7 @@
       "componentName": "srcDirectory",
       "data": {
         "text": "Source Directory:",
+        "outputMsg": "<span>[NOTE]: </span>Files will be stored in sub-folders within this directory after renaming.",
         "frequent": {
           "text": "Frequent Directories:",
           "directories": [{

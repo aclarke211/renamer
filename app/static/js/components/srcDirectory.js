@@ -21,6 +21,10 @@ function template(content, allContent) {
         </div>
       </div>
 
+      <div class="output-msg__container">
+        <p class="output-msg">${content.data.outputMsg}</p>
+      </div>
+
     </div>
   `;
 }
