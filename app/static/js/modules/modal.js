@@ -136,12 +136,13 @@ function modalRenameStatus(content) {
 
 }
 
-function renameComplete() {
+function renameComplete(revertableContent) {
   const completedMsg = `
       <p class="completed-msg">!! RENAMING COMPLETE !!</p>
 
       <div class="btns_container">
         <div class="btn complete-close-btn">CLOSE</div>
+        <div class="btn revert-btn">Revert</div>
       </div>
     `;
 
@@ -149,5 +150,9 @@ function renameComplete() {
 
   $('.complete-close-btn').click(() => {
     closeModal();
+  });
+
+  $('.revert-btn').click(() => {
+    console.log(revertableContent)
   });
 }

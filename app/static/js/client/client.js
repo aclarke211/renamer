@@ -139,7 +139,7 @@ function smoothScrollElement(className) {
 
 }
 
-function sendData(path, contentToPass) {
+function sendData(path, contentToPass, allFiles) {
   $.ajax({
     url: path,
     type: 'POST',
@@ -169,7 +169,9 @@ function sendData(path, contentToPass) {
 
       if (path === appContent.paths.renameFiles) {
 
-        updateRenamedFilesinModal(data);
+        if (allFiles !== undefined) {
+          updateRenamedFilesinModal(data, allFiles);
+        }
 
         console.log('Renamed File:');
         console.log(`
@@ -208,7 +210,7 @@ function createResultsModal(files) {
                   current: index + 1,
                   total: files.foundFiles.length
                 };
-                sendData(appContent.paths.renameFiles, files.foundFiles[index])
+                sendData(appContent.paths.renameFiles, files.foundFiles[index], files.foundFiles)
               }, i * 1000);
             })(i);
           }
@@ -219,7 +221,7 @@ function createResultsModal(files) {
   });
 }
 
-function updateRenamedFilesinModal(file) {
+function updateRenamedFilesinModal(file, allFiles) {
 
   const progPercentage = (file.fileCount.current / file.fileCount.total * 100).toFixed(0);
 
@@ -246,7 +248,7 @@ function updateRenamedFilesinModal(file) {
 
   if (file.fileCount.current === file.fileCount.total) {
     $.getScript('./app/static/js/modules/modal.js', function () {
-      renameComplete();
+      renameComplete(allFiles);
     });
   }
 }
