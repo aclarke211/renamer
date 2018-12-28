@@ -13,8 +13,6 @@
 
 ## Nice to Have
 
-- Visual progress bar when renaming files, not just [2 / 10] etc.
-
 - Generate video thumbnail (.gif) for found files.
 
   - Thumbnails will be stored in a directory within the app.
