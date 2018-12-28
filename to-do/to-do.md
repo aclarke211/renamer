@@ -2,7 +2,7 @@
 
 ## Steps
 
-- Delete empy directories and default rename folder after reverting files.
+- Delete empty directories and default rename folder (if empty) after reverting files.
 
 - Third accordian to search for files in a directory and sort them into folders based on tags in filenames.
   - Need to use **fs.stat** or similar to get the filetype of each file read.
