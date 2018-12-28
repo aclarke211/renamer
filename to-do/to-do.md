@@ -2,7 +2,7 @@
 
 ## Steps
 
-- Rename files by looping through found files array and passing the files to server 1 by 1.
+- Rename single file in server after being passed all files from client.
 
 - Show renamed files 1 by 1 and progress bar.
 
@@ -15,8 +15,6 @@
 ## Nice to Have
 
 - Checkbox to set custom output directory.
-
-- Modal content (i.e. /find-files) needs to be in **content.json** file.
 
 - Small Icon for multi files container, when hovered show help tool-top to identify how to copy files in from Excel.
 
