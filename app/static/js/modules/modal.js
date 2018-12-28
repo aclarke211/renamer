@@ -123,6 +123,7 @@ function modalRenameStatus(content) {
       <div class="progress-values"></div>
     </div>
     <div class="renamed-files__container"></div>
+    <div class="completed-msg__container"></div>
   `;
 
   $('.modal__inner').append(modalRenameInner);

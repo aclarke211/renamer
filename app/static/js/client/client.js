@@ -229,9 +229,17 @@ function updateRenamedFilesinModal(file) {
   $('.progress-values').replaceWith(progValues);
 
   const completedFile = `
-    <p class="renamed-file">Completed Rename:<br>
+    <p class="renamed-file">Renamed:<br>
     "${file.oldFilename}" to "${file.newFilename}"</p>
   `;
 
   $('.renamed-files__container').append(completedFile);
+
+  if (file.fileCount.current === file.fileCount.total) {
+    const completedMsg = `
+      <p class="completed-msg">!! RENAMING COMPLETE !!</p>
+    `;
+
+    $('.completed-msg__container').append(completedMsg);
+  }
 }
