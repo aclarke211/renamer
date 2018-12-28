@@ -249,6 +249,9 @@ function updateRenamedFilesinModal(file, allFiles) {
   if (file.fileCount.current === file.fileCount.total) {
     $.getScript('./app/static/js/modules/modal.js', function () {
       renameComplete(allFiles);
+      $('.revert-btn').click(() => {
+        sendData(appContent.paths.revertFiles, allFiles);
+      });
     });
   }
 }

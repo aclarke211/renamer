@@ -58,3 +58,11 @@ module.exports.renameFile = (req, res) => {
   `);
   res.json(file);
 };
+
+module.exports.revertFiles = (req, res) => {
+  let files = req.body
+
+  console.log(files);
+
+  res.json(files);
+};

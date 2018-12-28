@@ -152,7 +152,4 @@ function renameComplete(revertableContent) {
     closeModal();
   });
 
-  $('.revert-btn').click(() => {
-    console.log(revertableContent)
-  });
 }

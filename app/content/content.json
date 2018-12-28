@@ -4,7 +4,8 @@
   },
   "paths": {
     "findFiles": "/find-file",
-    "renameFiles": "/rename-file"
+    "renameFiles": "/rename-file",
+    "revertFiles": "/revert-files"
   },
   "components": [{
       "componentName": "header",
