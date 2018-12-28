@@ -22,7 +22,7 @@ function addListeners() {
     prepareDataToSend('/find-file', names, 'video', '.single-file__container');
   });
 
-  $('.log-names__btn').click(function () {
+  $('.find-multi-files__btn').click(function () {
     prepareDataToSend('/find-file', readMultipleFilenames(), 'video', '.multi-files__container');
   });
 }

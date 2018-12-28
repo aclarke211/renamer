@@ -22,7 +22,7 @@ oldFilename_03	newFilename_03 ['^^Art' - 'Project'] ['Horror']
 oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
           </div>
         </div>
-        <div class="log-names__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
+        <div class="find-multi-files__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
       </div>
 
 
