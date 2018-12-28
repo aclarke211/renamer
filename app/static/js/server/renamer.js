@@ -39,9 +39,22 @@ function checkFilesExist(content) {
 
 module.exports.renameFile = (req, res) => {
   let file = req.body;
+
+
+
+  if (!fs.existsSync(`${file.srcDir}/${file.defaultFolder}`)) {
+    fs.mkdirSync(`${file.srcDir}/${file.defaultFolder}`);
+  }
+  if (!fs.existsSync(`${file.srcDir}/${file.folder}`)) {
+    fs.mkdirSync(`${file.srcDir}/${file.folder}`);
+  }
+
   console.log('FILE TO RENAME RECEIVED:')
+  fs.rename(`${file.srcDir}/${file.oldFilename}.${file.fileType}`, `${file.srcDir}/${file.folder}/${file.newFilename}.${file.fileType}`, function (err) {
+    if (err) throw err;
+  })
   console.log(`
-    [ ${file.fileCount.current} / ${file.fileCount.total} ] Renaming "${file.oldFilename}" to "${file.newFilename}"
+    [ ${file.fileCount.current} / ${file.fileCount.total} ] Renamed "${file.oldFilename}" to "${file.newFilename}"
   `);
   res.json(file);
 };

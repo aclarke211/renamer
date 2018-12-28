@@ -54,6 +54,7 @@ function createContent(names, type) {
 
   names.forEach((name) => {
     const file = {
+      defaultFolder: appContent.defaults.folderName,
       foundStatus: false,
       oldFilename: name.oldFilename,
       newFilename: name.newFilename,
