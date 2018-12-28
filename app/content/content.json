@@ -1,4 +1,8 @@
 {
+  "paths": {
+    "findFiles": "/find-file",
+    "renameFiles": "/rename-file"
+  },
   "components": [{
       "componentName": "header",
       "data": {
@@ -46,8 +50,7 @@
           },
           "btns": {
             "findMultiFiles": {
-              "text": "Find Files",
-              "path": "/find-file"
+              "text": "Find Files"
             }
           }
         },
@@ -61,8 +64,7 @@
           },
           "btns": {
             "findSingleFile": {
-              "text": "Find File",
-              "path": "/find-file"
+              "text": "Find File"
             }
           }
         }
@@ -84,8 +86,7 @@
         },
         "findFilesBtn": {
           "className": "rename-files-btn",
-          "text": "Rename Files",
-          "path": "/rename-files"
+          "text": "Rename Files"
         }
       },
       "files": {

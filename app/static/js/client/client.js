@@ -2,7 +2,7 @@ var appContent;
 
 function addListeners(content) {
   appContent = content;
-  console.log(appContent);
+  // console.log(appContent);
   // Select box for 'Source Directory'
   $('#srcDirectory-frequent').change(function () {
     $('.srcDirectory-path').val(
@@ -23,11 +23,11 @@ function addListeners(content) {
       newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
     }];
 
-    prepareDataToSend('/find-file', names, 'video', '.single-file__container');
+    prepareDataToSend(content.paths.findFiles, names, 'video', '.single-file__container');
   });
 
   $('.find-multi-files__btn').click(function () {
-    prepareDataToSend('/find-file', readMultipleFilenames(), 'video', '.multi-files__container');
+    prepareDataToSend(content.paths.findFiles, readMultipleFilenames(), 'video', '.multi-files__container');
   });
 }
 
@@ -158,14 +158,14 @@ function sendData(url, contentToPass) {
       // console.log('Returned Content: ');
       // console.log(data);
 
-      if (url === '/find-file') {
+      if (url === appContent.paths.findFiles) {
         const files = {};
         files.foundFiles = data.files.filter(file => file.foundStatus === true);
         files.missingFiles = data.files.filter(file => file.foundStatus === false);
         createResultsModal(files);
       }
 
-      if (url === '/rename-file') {
+      if (url === appContent.paths.renameFiles) {
         console.log('RENAMED FILE:')
         console.log(data);
       }
@@ -193,7 +193,7 @@ function createResultsModal(files) {
         for (var i = 0; i < files.foundFiles.length; i++) {
           (function (index) {
             setTimeout(function () {
-              sendData('/rename-file', files.foundFiles[index])
+              sendData(appContent.paths.renameFiles, files.foundFiles[index])
             }, i * 1000);
           })(i);
         }
