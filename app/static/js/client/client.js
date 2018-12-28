@@ -220,9 +220,14 @@ function createResultsModal(files) {
 
 function updateRenamedFilesinModal(file) {
 
+  const progPercentage = file.fileCount.current / file.fileCount.total * 100;
+
   const progValues = `
     <div class="progress-values">
-      <p>[ ${file.fileCount.current} / ${file.fileCount.total} ]</p>
+      <p class="progress-fraction">
+      <span class="progress-percentage">${progPercentage.toFixed(0)}%</span>
+      [ ${file.fileCount.current} / ${file.fileCount.total} ]
+      </p>
     </div>
   `;
 
