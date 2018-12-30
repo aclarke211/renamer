@@ -142,8 +142,8 @@ function renameComplete(revertableContent) {
       <p class="completed-msg">!! RENAMING COMPLETE !!</p>
 
       <div class="btns_container">
-        <div class="btn complete-close-btn">CLOSE</div>
-        <div class="btn revert-btn">Revert</div>
+      <div class="btn revert-btn">Revert</div>
+      <div class="btn complete-close-btn">CLOSE</div>
       </div>
     `;
 

@@ -189,8 +189,6 @@ function sendData(path, contentToPass, allFiles) {
               srcDir: data[0].srcDir,
               folder: data[0].defaultFolder
             };
-
-            console.log(folderToDelFrom);
             sendData(appContent.paths.delFolders, folderToDelFrom);
           });
         });
