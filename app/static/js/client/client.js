@@ -180,11 +180,26 @@ function sendData(path, contentToPass, allFiles) {
       }
 
       if (path === appContent.paths.revertFiles) {
-        $.getScript('./app/static/js/modules/modal.js', function () {
-          revertComplete(appContent);
+        $.when(
+          $.getScript('./app/static/js/modules/modal.js', function () {
+            revertComplete(appContent);
+          })).then(function () {
+          $('.del-folder-btn').click(function () {
+            const folderToDelFrom = {
+              srcDir: data[0].srcDir,
+              folder: data[0].defaultFolder
+            };
+
+            console.log(folderToDelFrom);
+            sendData(appContent.paths.delFolders, folderToDelFrom);
+          });
         });
       }
 
+      if (path === appContent.paths.delFolders) {
+        $('.modal-title').text('Folders Deleted');
+        $('.del-folder-btn').remove();
+      }
     },
 
     error: function () {

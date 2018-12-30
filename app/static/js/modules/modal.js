@@ -174,4 +174,10 @@ function revertComplete(content) {
   `;
 
   $('.modal__inner').prepend(modalRevertedInner);
+
+  const delFoldersBtn = `
+    <div class="btn del-folder-btn">Delete Folders</div>
+  `;
+
+  $('.modal__inner .btns_container').prepend(delFoldersBtn);
 }

@@ -51,7 +51,7 @@ module.exports.renameFile = (req, res) => {
   fs.rename(
     `${file.srcDir}/${file.oldFilename}.${file.fileType}`,
     `${file.srcDir}/${file.folder}/${file.newFilename}.${file.fileType}`,
-    function(err) {
+    function (err) {
       if (err) throw err;
     },
   );
@@ -71,19 +71,27 @@ module.exports.revertFiles = (req, res) => {
     fs.rename(
       `${file.srcDir}/${file.folder}/${file.newFilename}.${file.fileType}`,
       `${file.srcDir}/${file.oldFilename}.${file.fileType}`,
-      function(err) {
+      function (err) {
         if (err) throw err;
         console.log(`Reverted file "${file.newFilename}" to "${file.oldFilename}"`);
       },
     );
-    defaultFolder = `${file.srcDir}/${file.defaultFolder}`;
   });
 
-  console.log('FOLDER:');
-  console.log(defaultFolder);
-  cleanEmptyFoldersRecursively(defaultFolder);
   res.json(files);
 };
+
+module.exports.delFolders = (req, res) => {
+  let folder = req.body;
+
+  const folderToDelFrom = `${folder.srcDir}/${folder.folder}`;
+
+  console.log('FOLDER:');
+  console.log(folderToDelFrom);
+  cleanEmptyFoldersRecursively(folderToDelFrom);
+
+  res.json(folder);
+}
 
 function cleanEmptyFoldersRecursively(folder) {
   var isDir = fs.statSync(folder).isDirectory();
@@ -92,7 +100,7 @@ function cleanEmptyFoldersRecursively(folder) {
   }
   var files = fs.readdirSync(folder);
   if (files.length > 0) {
-    files.forEach(function(file) {
+    files.forEach(function (file) {
       var fullPath = path.join(folder, file);
       cleanEmptyFoldersRecursively(fullPath);
     });

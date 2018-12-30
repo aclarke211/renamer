@@ -5,7 +5,8 @@
   "paths": {
     "findFiles": "/find-file",
     "renameFiles": "/rename-file",
-    "revertFiles": "/revert-files"
+    "revertFiles": "/revert-files",
+    "delFolders": "/del-folders"
   },
   "components": [{
       "componentName": "header",
