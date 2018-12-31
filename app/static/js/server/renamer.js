@@ -88,7 +88,17 @@ module.exports.delFolders = (req, res) => {
 
   console.log('FOLDER:');
   console.log(folderToDelFrom);
-  cleanEmptyFoldersRecursively(folderToDelFrom);
+
+  const removeFolders = new Promise((resolve, reject) => {
+    cleanEmptyFoldersRecursively(folderToDelFrom);
+    resolve();
+  });
+
+  removeFolders.then(() => {
+    if (fs.existsSync(folderToDelFrom)) {
+      cleanEmptyFoldersRecursively(folderToDelFrom);
+    }
+  });
 
   res.json(folder);
 }
