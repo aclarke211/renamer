@@ -72,13 +72,20 @@ function createContent(names, type) {
 }
 
 function findPrimaryFolder(filename, defaultFolder) {
-  if (filename !== undefined && filename.indexOf(' [') !== -1 && filename.indexOf(']') !== -1) {
+  if (filename !== undefined && filename.indexOf('[') !== -1 && filename.indexOf(']') !== -1) {
     const firstSet = filename.substring(
       filename.indexOf("['") + 2,
       filename.indexOf("']")
     );
 
-    const folderName = firstSet.substring(0, firstSet.indexOf(`'`, 1));
+    console.log("First Set:");
+    console.log(firstSet);
+
+    let folderName = firstSet;
+
+    if (firstSet.indexOf(`'`) !== -1) {
+      folderName = firstSet.substring(0, firstSet.indexOf(`'`, 1));
+    }
 
     return `${defaultFolder}/${folderName}`;
   } else {
@@ -165,6 +172,7 @@ function sendData(path, contentToPass, allFiles) {
         files.missingFiles = data.files.filter(file => file.foundStatus === false);
         createResultsModal(files);
         console.log('Files successfully found');
+        console.log(data);
       }
 
       if (path === appContent.paths.renameFiles) {

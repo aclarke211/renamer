@@ -57,6 +57,7 @@ function createFileElem(file, parentElem) {
     <p class="current_filename">${file.oldFilename}</p>
     <p class="new_filename">${file.newFilename}</p>
     <p class="file-type">${file.fileType}</p>
+    <p class="new-folder">${file.folder}</p>
   </div>
 `;
   // console.log('CREATE FILE');
