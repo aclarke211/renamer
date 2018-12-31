@@ -17,7 +17,7 @@ function showModal(files, content) {
           <div class="files-collection"></div>
           </div>
         </div>
-        <div class="btns_container">
+        <div class="btns__container">
           <div class="${content.modules.modal.findStatus.btns.renameFilesBtn.className} btn">${content.modules.modal.findStatus.btns.renameFilesBtn.text}</div>
         </div>
       </div>
@@ -142,7 +142,7 @@ function renameComplete(revertableContent) {
   const completedMsg = `
       <p class="completed-msg">!! RENAMING COMPLETE !!</p>
 
-      <div class="btns_container">
+      <div class="btns__container">
       <div class="btn revert-btn">Revert</div>
       <div class="btn complete-close-btn">CLOSE</div>
       </div>
@@ -158,8 +158,8 @@ function renameComplete(revertableContent) {
 
 function revertComplete(content) {
   $('.modal__inner').children().not('.completed-msg__container').remove();
-  $('.completed-msg__container').children().not('.btns_container').remove();
-  $('.completed-msg__container .btns_container').children().not('.complete-close-btn').remove();
+  $('.completed-msg__container').children().not('.btns__container').remove();
+  $('.completed-msg__container .btns__container').children().not('.complete-close-btn').remove();
 
   $('.modal__outer')
     .click(() => {
@@ -180,5 +180,5 @@ function revertComplete(content) {
     <div class="btn del-folder-btn">Delete Folders</div>
   `;
 
-  $('.modal__inner .btns_container').prepend(delFoldersBtn);
+  $('.modal__inner .btns__container').prepend(delFoldersBtn);
 }
