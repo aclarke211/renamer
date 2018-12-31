@@ -125,3 +125,25 @@ function cleanEmptyFoldersRecursively(folder) {
     return;
   }
 }
+
+module.exports.searchFilesToSort = (req, res) => {
+  let folderToSearch = req.body.toSearch;
+  console.log(folderToSearch);
+
+  const filesInFolder = {};
+  const files = [];
+
+  fs.readdirSync(folderToSearch).forEach(file => {
+    filenameMinusExtension = file.substr(0, file.lastIndexOf('.'));
+    if (filenameMinusExtension !== '') {
+      files.push(filenameMinusExtension);
+    }
+  })
+
+  filesInFolder.files = files;
+  console.log(filesInFolder);
+
+
+  res.json(filesInFolder);
+
+};

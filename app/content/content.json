@@ -6,7 +6,8 @@
     "findFiles": "/find-file",
     "renameFiles": "/rename-file",
     "revertFiles": "/revert-files",
-    "delFolders": "/del-folders"
+    "delFolders": "/del-folders",
+    "sortFiles": "/sort-files"
   },
   "components": [{
       "componentName": "header",

@@ -31,7 +31,14 @@ function addListeners(content) {
   });
 
   $('.sort-files__btn').click(function() {
-    alert('Sort Files Button clicked.');
+    console.log('Sort Files Button clicked.');
+    const dirs = {
+      toSearch: $('.srcDirectory-path').val() || 'No Source Directory supplied.'
+    };
+
+    if (validateForms('.search-files__container')) {
+      sendData(content.paths.sortFiles, dirs);
+    }
   });
 }
 
@@ -208,6 +215,10 @@ function sendData(path, contentToPass, allFiles) {
         $('.modal-title').text('Folders Deleted');
         $('.del-folder-btn').remove();
         console.log('Removed directories.');
+      }
+
+      if (path === appContent.paths.sortFiles) {
+        console.log(data);
       }
     },
 
