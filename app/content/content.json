@@ -74,10 +74,10 @@
             }
           }
         },
-        "searchFiles": {
-          "subtitle": "Search Files",
+        "sortFiles": {
+          "subtitle": "Sort Files",
           "btns": {
-            "searchFiles": {
+            "sortFiles": {
               "text": "Search Source Directory"
             }
           }

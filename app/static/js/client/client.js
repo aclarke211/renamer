@@ -29,6 +29,10 @@ function addListeners(content) {
   $('.find-multi-files__btn').click(function () {
     prepareDataToSend(content.paths.findFiles, readMultipleFilenames(), 'video', '.multi-files__container');
   });
+
+  $('.sort-files__btn').click(function() {
+    alert('Sort Files Button clicked.');
+  });
 }
 
 function prepareDataToSend(path, names, type, form) {

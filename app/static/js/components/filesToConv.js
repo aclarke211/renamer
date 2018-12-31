@@ -54,9 +54,9 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
       </div>
 
       <div class="search-files__container accordion active">
-        <h3 class="${name}-subtitle subtitle">${content.data.searchFiles.subtitle}</h3>
+        <h3 class="${name}-subtitle subtitle">${content.data.sortFiles.subtitle}</h3>
         <div class="btns__container"></div>
-          <div class="search-files__btn btn">${content.data.searchFiles.btns.searchFiles.text}</div>
+          <div class="sort-files__btn btn">${content.data.sortFiles.btns.sortFiles.text}</div>
         </div>
       </div>
 
