@@ -78,9 +78,6 @@ function findPrimaryFolder(filename, defaultFolder) {
       filename.indexOf("']")
     );
 
-    console.log("First Set:");
-    console.log(firstSet);
-
     let folderName = firstSet;
 
     if (firstSet.indexOf(`'`) !== -1) {
