@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+const colors = require('colors');
 
 module.exports.findFile = (req, res) => {
   let content = req.body;
@@ -128,7 +129,8 @@ function cleanEmptyFoldersRecursively(folder) {
 
 module.exports.searchFilesToSort = (req, res) => {
   let folderToSearch = req.body.toSearch;
-  console.log(folderToSearch);
+  console.log(colors.cyan('Searching Folder:'));
+  console.log(colors.green(folderToSearch));
 
   const filesInFolder = {};
   const files = [];
@@ -136,13 +138,16 @@ module.exports.searchFilesToSort = (req, res) => {
   fs.readdirSync(folderToSearch).forEach(file => {
     filenameMinusExtension = file.substr(0, file.lastIndexOf('.'));
     if (filenameMinusExtension !== '') {
-      files.push(filenameMinusExtension);
+      filesObject = {
+        newFilename: filenameMinusExtension,
+        oldFilename: filenameMinusExtension
+      }
+      files.push(filesObject);
     }
   })
 
   filesInFolder.files = files;
   console.log(filesInFolder);
-
 
   res.json(filesInFolder);
 

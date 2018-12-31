@@ -30,5 +30,5 @@ express()
   .listen(PORT, () => {
     console.log(colors.black.bgGreen('RENAMER running...'));
     console.log(colors.yellow('Listening on:'));
-    console.log(colors.cyan(`http://localhost:${PORT}`));
+    console.log(colors.blue(`http://localhost:${PORT}`));
   });
