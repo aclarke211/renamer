@@ -11,7 +11,7 @@ function template(content, allContent) {
 
       <h2 class="title">${content.data.title}</h2>
 
-      <div class="multi-files__container accordion active">
+      <div class="multi-files__container accordion">
         <h3 class="${name}-subtitle subtitle">${content.data.multipleFiles.subtitle}</h3>
         <div class="fields__container">
           <div class="field">
@@ -51,10 +51,14 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
         <div class="btns_container">
           <div class="btn find-single-file-btn">${content.data.singleFile.btns.findSingleFile.text}</div>
         </div>
-
-
       </div>
 
+      <div class="search-files__container accordion active">
+        <h3 class="${name}-subtitle subtitle">${content.data.searchFiles.subtitle}</h3>
+        <div class="btns_container">
+          <div class="search-files__btn btn">${content.data.searchFiles.btns.searchFiles.text}</div>
+        </div>
+      </div>
 
     </div>
   `;

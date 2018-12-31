@@ -73,6 +73,14 @@
               "text": "Find File"
             }
           }
+        },
+        "searchFiles": {
+          "subtitle": "Search Files",
+          "btns": {
+            "searchFiles": {
+              "text": "Search Source Directory"
+            }
+          }
         }
       }
     },
