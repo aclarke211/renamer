@@ -1,4 +1,5 @@
 var appContent;
+var genreType = 'video';
 
 function addListeners(content) {
   appContent = content;
@@ -23,11 +24,11 @@ function addListeners(content) {
       newFilename: $('.filesToConv-new-name').val() || 'No New Filename provided',
     }];
 
-    prepareDataToSend(content.paths.findFiles, names, 'video', '.single-file__container');
+    prepareDataToSend(content.paths.findFiles, names, genreType, '.single-file__container');
   });
 
   $('.find-multi-files__btn').click(function () {
-    prepareDataToSend(content.paths.findFiles, readMultipleFilenames(), 'video', '.multi-files__container');
+    prepareDataToSend(content.paths.findFiles, readMultipleFilenames(), genreType, '.multi-files__container');
   });
 
   $('.sort-files__btn').click(function() {
@@ -218,7 +219,9 @@ function sendData(path, contentToPass, allFiles) {
       }
 
       if (path === appContent.paths.sortFiles) {
-        console.log(data);
+        console.log(data.files);
+
+        sendData(appContent.paths.findFiles, createContent(data.files, genreType));
       }
     },
 

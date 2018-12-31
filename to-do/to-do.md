@@ -2,8 +2,7 @@
 
 ## Steps
 
-- Third accordian to search for files in a directory and sort them into folders based on tags in filenames.
-  - Need to use **fs.stat** or similar to get the filetype of each file read.
+- Style
 
 ## Nice to Have
 
@@ -13,3 +12,9 @@
   - This directory will need to be cleaned on each run to remove old/unneeded thumbnails.
 
 - Small Icon for multi files container, when hovered show help tool-top to identify how to copy files in from Excel.
+
+## Bugs
+
+- When reverting files, the message saying 'Revert Complete' (in modal), appears before all files have actually been reverted.
+
+- Possibly, still not always deleted parent folder (on Mac) after reverting.
