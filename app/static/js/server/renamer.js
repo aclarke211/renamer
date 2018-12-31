@@ -86,7 +86,7 @@ module.exports.delFolders = (req, res) => {
 
   const folderToDelFrom = `${folder.srcDir}/${folder.folder}`;
 
-  console.log('FOLDER:');
+  console.log('Remove directories from:');
   console.log(folderToDelFrom);
 
   const removeFolders = new Promise((resolve, reject) => {

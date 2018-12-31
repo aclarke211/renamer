@@ -197,11 +197,13 @@ function sendData(path, contentToPass, allFiles) {
             sendData(appContent.paths.delFolders, folderToDelFrom);
           });
         });
+        console.log('Reverted Files.')
       }
 
       if (path === appContent.paths.delFolders) {
         $('.modal-title').text('Folders Deleted');
         $('.del-folder-btn').remove();
+        console.log('Removed directories.');
       }
     },
 
