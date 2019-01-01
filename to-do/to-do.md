@@ -2,6 +2,14 @@
 
 ## Steps
 
+- Search/Sort files button to be in buttons container
+
+  - Extra closing div on buttons container at the moment.
+
+- Rename search/sort files to either search or sort files (need to decide what to call it).
+
+- New Accorion for find and replace text in file names.
+
 - Style
 
 ## Nice to Have
