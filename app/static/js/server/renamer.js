@@ -136,13 +136,15 @@ module.exports.searchFilesToSort = (req, res) => {
   const files = [];
 
   fs.readdirSync(folderToSearch).forEach(file => {
-    filenameMinusExtension = file.substr(0, file.lastIndexOf('.'));
-    if (filenameMinusExtension !== '') {
-      filesObject = {
-        newFilename: filenameMinusExtension,
-        oldFilename: filenameMinusExtension
+    if (file !== 'desktop.ini') {
+      filenameMinusExtension = file.substr(0, file.lastIndexOf('.'));
+      if (filenameMinusExtension !== '') {
+        filesObject = {
+          newFilename: filenameMinusExtension,
+          oldFilename: filenameMinusExtension
+        }
+        files.push(filesObject);
       }
-      files.push(filesObject);
     }
   })
 
