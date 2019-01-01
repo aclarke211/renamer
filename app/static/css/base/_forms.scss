@@ -68,6 +68,7 @@ $btnBorderSize: 3px;
 .btn {
   @include hover-bg($btnBGColor, $btnBGColorHover);
   border: $btnBorderSize solid $btnBGColor;
+  border-radius: 4px;
   color: white;
   font-size: .9rem;
   font-weight: 600;
