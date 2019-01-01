@@ -1,5 +1,5 @@
 function init(appContent, componentContent, $appContainer) {
-  $.when($appContainer.append(template(componentContent, appContent))).done(function() {
+  $.when($appContainer.append(template(componentContent, appContent))).done(function () {
     activateAccordions();
   });
 }
@@ -59,7 +59,7 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
         </div>
       </div>
 
-      <div class="search-files__container accordion active">
+      <div class="sort-files__container accordion active">
         <h3 class="${name}-subtitle subtitle">${content.data.sortFiles.subtitle}</h3>
         <div class="btns__container">
           <div class="sort-files__btn btn">${content.data.sortFiles.btns.sortFiles.text}</div>
@@ -71,8 +71,8 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
 }
 
 function activateAccordions() {
-  $('.accordion').click(function() {
-    $('.accordion').each(function() {
+  $('.accordion').click(function () {
+    $('.accordion').each(function () {
       $(this).removeClass('active');
     });
     $(this).addClass('active');

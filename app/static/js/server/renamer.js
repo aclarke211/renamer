@@ -127,7 +127,7 @@ function cleanEmptyFoldersRecursively(folder) {
   }
 }
 
-module.exports.searchFilesToSort = (req, res) => {
+module.exports.sortFiles = (req, res) => {
   let folderToSearch = req.body.toSearch;
   console.log(colors.cyan('Searching Folder:'));
   console.log(colors.green(folderToSearch));

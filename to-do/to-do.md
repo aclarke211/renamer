@@ -2,8 +2,6 @@
 
 ## Steps
 
-- Rename search/sort files to either search or sort files (need to decide what to call it).
-
 - New Accorion for find and replace text in file names.
 
 - Style.

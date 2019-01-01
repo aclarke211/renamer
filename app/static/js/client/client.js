@@ -31,13 +31,13 @@ function addListeners(content) {
     prepareDataToSend(content.paths.findFiles, readMultipleFilenames(), genreType, '.multi-files__container');
   });
 
-  $('.sort-files__btn').click(function() {
+  $('.sort-files__btn').click(function () {
     console.log('Sort Files Button clicked.');
     const dirs = {
       toSearch: $('.srcDirectory-path').val() || 'No Source Directory supplied.'
     };
 
-    if (validateForms('.search-files__container')) {
+    if (validateForms('.sort-files__container')) {
       sendData(content.paths.sortFiles, dirs);
     }
   });
