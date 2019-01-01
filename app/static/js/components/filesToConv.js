@@ -1,5 +1,5 @@
 function init(appContent, componentContent, $appContainer) {
-  $.when($appContainer.append(template(componentContent, appContent))).done(function () {
+  $.when($appContainer.append(template(componentContent, appContent))).done(function() {
     activateAccordions();
   });
 }
@@ -15,7 +15,9 @@ function template(content, allContent) {
         <h3 class="${name}-subtitle subtitle">${content.data.multipleFiles.subtitle}</h3>
         <div class="fields__container">
           <div class="field">
-            <label for="${name}-all-orig-names" class="${name}-all-orig-names-label">${content.data.multipleFiles.filenames.label}</label>
+            <label for="${name}-all-orig-names" class="${name}-all-orig-names-label">${
+    content.data.multipleFiles.filenames.label
+  }</label>
             <textarea class="${name}-all-orig-names-input">vid1	newFileName_01
 vid2	newFilename_02 ['Comedy' - 'Romcom'] ['Drama']
 vid3	newFilename_03 ['^^Art' - 'Project'] ['Horror']
@@ -23,7 +25,9 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
           </div>
         </div>
         <div class="btns__container">
-          <div class="find-multi-files__btn btn">${content.data.multipleFiles.btns.findMultiFiles.text}</div>
+          <div class="find-multi-files__btn btn">${
+            content.data.multipleFiles.btns.findMultiFiles.text
+          }</div>
         </div>
       </div>
 
@@ -49,13 +53,15 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
         </div>
 
         <div class="btns__container">
-          <div class="btn find-single-file-btn">${content.data.singleFile.btns.findSingleFile.text}</div>
+          <div class="btn find-single-file-btn">${
+            content.data.singleFile.btns.findSingleFile.text
+          }</div>
         </div>
       </div>
 
       <div class="search-files__container accordion active">
         <h3 class="${name}-subtitle subtitle">${content.data.sortFiles.subtitle}</h3>
-        <div class="btns__container"></div>
+        <div class="btns__container">
           <div class="sort-files__btn btn">${content.data.sortFiles.btns.sortFiles.text}</div>
         </div>
       </div>
@@ -65,8 +71,8 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
 }
 
 function activateAccordions() {
-  $('.accordion').click(function () {
-    $('.accordion').each(function () {
+  $('.accordion').click(function() {
+    $('.accordion').each(function() {
       $(this).removeClass('active');
     });
     $(this).addClass('active');
