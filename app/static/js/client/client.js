@@ -45,12 +45,15 @@ function addListeners(content) {
   $('.find-replace__btn').click(function() {
     if (validateForms('.find-replace__container')) {
 
-      const strings = {
-        find: $('.filesToConv-file-to-find').val() || 'No File to Find provided.',
-        replace: $('.filesToConv-file-to-replace').val() || 'No File to Replace provided.'
+      const values = {
+        strings: {
+          find: $('.filesToConv-file-to-find').val() || 'No File to Find provided.',
+          replace: $('.filesToConv-file-to-replace').val() || 'No File to Replace provided.'
+        },
+        srcDir: $('.srcDirectory-path').val() || 'No Source Directory supplied.'
       };
 
-      sendData(content.paths.findAndReplace, strings);
+      sendData(content.paths.findAndReplace, values);
     }
   });
 }
