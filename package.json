@@ -18,7 +18,8 @@
     "express": "^4.16.4",
     "express-compile-sass": "^4.0.0",
     "node-sass": "^4.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "recursive-readdir": "^2.2.2"
   },
   "devDependencies": {
     "nodemon": "^1.18.8",

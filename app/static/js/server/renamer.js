@@ -1,5 +1,6 @@
 var fs = require('fs');
 var path = require('path');
+var recursive = require("recursive-readdir");
 const colors = require('colors');
 
 module.exports.findFile = (req, res) => {
@@ -157,10 +158,46 @@ module.exports.sortFiles = (req, res) => {
 
 module.exports.findAndReplace = (req, res) => {
   let values = req.body;
+  const files = [];
 
   console.log(values);
 
+  const filesToIgnore = ['*.exe', '.*'];
 
 
-  res.json(values);
+  recursive(values.srcDir, filesToIgnore, function(err, files) {
+    const allFilenames = [];
+
+    files.forEach((file) => {
+
+      const filenames = {};
+      filenames.old = file;
+      filenames.new = '';
+
+      if (file.indexOf(values.strings.find) !== -1) {
+        newFilename = file.replace(values.strings.find, values.strings.replace);
+        // console.log(colors.bgGreen(file));
+        filenames.new = newFilename;
+      }
+      allFilenames.push(filenames);
+    });
+
+    console.log(colors.cyan('New Filenames:'));
+    console.log(allFilenames);
+
+    replaceFilenames(allFilenames);
+
+    res.json(allFilenames);
+  });
 };
+
+function replaceFilenames(filenames) {
+  filenames.forEach((file) => {
+    if (file.new !== '') {
+      console.log(colors.bgBlue('GOING TO REPLACE:'));
+      console.log(colors.bgMagenta(file.old));
+      console.log('with');
+      console.log(colors.green(file.new));
+    }
+  });
+}

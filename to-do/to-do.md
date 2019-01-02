@@ -1,8 +1,16 @@
 # To-Do [Renamer]
 
+## Packages to Install
+
+### Stratos
+- npm i recursive-readdir
+
+### Asus
+- npm i recursive-readdir
+
 ## Steps
 
-- New Accorion for find and replace text in file names.
+- Find a string in all found files and replace with a new string.
 
 - Style.
 
