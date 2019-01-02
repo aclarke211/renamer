@@ -2,12 +2,6 @@
 
 ## Packages to Install
 
-### Stratos
-- npm i recursive-readdir
-
-### Asus
-- npm i recursive-readdir
-
 ## Steps
 
 - Find a string in all found files and replace with a new string.
