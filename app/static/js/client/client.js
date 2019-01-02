@@ -44,7 +44,16 @@ function addListeners(content) {
 
   $('.find-replace__btn').click(function() {
     if (validateForms('.find-replace__container')) {
+
+      const strings = {
+        find: $('.filesToConv-file-to-find').val() || 'No File to Find provided.',
+        replace: $('.filesToConv-file-to-replace').val() || 'No File to Replace provided.'
+      };
+
+      // sendData(content.paths.findAndReplace, strings);
+
       console.log('Find / Replace button clicked.')
+      // console.log(strings);
     }
   });
 }

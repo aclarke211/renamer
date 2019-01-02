@@ -77,8 +77,8 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
       </div>
 
       <div class="field">
-        <label for="${name}-new-name" class="${name}-text">${content.data.findAndReplace.fields.replace.label}</label>
-        <input id="${name}-new-name" class="${name}-new-name" type="text"
+        <label for="${name}-file-to-replace" class="${name}-text">${content.data.findAndReplace.fields.replace.label}</label>
+        <input id="${name}-file-to-replace" class="${name}-file-to-replace" type="text"
         placeholder="${content.data.findAndReplace.fields.replace.placeholder}" value="">
       </div>
     </div>
