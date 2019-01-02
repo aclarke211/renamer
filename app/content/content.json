@@ -89,7 +89,7 @@
           "subtitle": "Find / Replace",
           "fields": {
             "find": {
-              "label": "To Find",
+              "label": "To Find (use quotes, i.e. 'Word')",
               "placeholder": "Specify a string to find..."
             },
             "replace": {
