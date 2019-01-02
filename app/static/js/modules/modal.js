@@ -228,9 +228,6 @@ function showFilesToReplaceName(files) {
     $('.modal__inner .btn').remove();
   } else {
       files.forEach((file) => {
-        file.fileType = '';
-        file.folder = '';
-
         createFileElem(file, $('.returned-files__container'));
       });
   }

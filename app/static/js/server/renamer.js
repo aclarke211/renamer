@@ -6,7 +6,6 @@ const colors = require('colors');
 module.exports.findFile = (req, res) => {
   let content = req.body;
   console.log('RECEIVED CONTENT:');
-  // console.log(content);
 
   content = checkFilesExist(content);
   res.json(content);
@@ -35,7 +34,6 @@ function checkFilesExist(content) {
     }
   });
 
-  // console.log(content);
   return content;
 }
 
@@ -122,7 +120,7 @@ function cleanEmptyFoldersRecursively(folder) {
   }
 
   if (files.length == 0) {
-    console.log('removing: ', folder);
+    console.log('Removing: ', folder);
     fs.rmdirSync(folder);
     return;
   }
@@ -158,12 +156,9 @@ module.exports.sortFiles = (req, res) => {
 
 module.exports.findAndReplace = (req, res) => {
   let values = req.body;
-  const files = [];
-
-  console.log(values);
+  console.log(colors.bgCyan(values));
 
   const filesToIgnore = ['*.exe', '.*'];
-
 
   recursive(values.srcDir, filesToIgnore, function(err, files) {
     const allFilenames = [];
@@ -171,13 +166,20 @@ module.exports.findAndReplace = (req, res) => {
     files.forEach((file) => {
 
       const filenames = {};
-      filenames.oldFilename = file;
-      filenames.newFilename = '';
 
       if (file.indexOf(values.strings.find) !== -1) {
-        newFilename = file.replace(values.strings.find, values.strings.replace);
-        // console.log(colors.bgGreen(file));
-        filenames.newFilename = newFilename;
+        fileType = file.substr(file.lastIndexOf('.'));
+        oldFilenameNameOnly = file.substr(file.lastIndexOf('/')+1).replace(fileType, '');
+
+        const newFilename = file.substr(file.lastIndexOf('/')+1).replace(fileType, '');
+        const newFilenameNameOnly = newFilename.replace(values.strings.find, values.strings.replace);
+
+        // Set data for each file
+        filenames.newFilename = newFilenameNameOnly;
+        filenames.oldFilename = oldFilenameNameOnly;
+        filenames.folder = file.substr(0, file.lastIndexOf('/')+1);
+        filenames.fileType = fileType;
+
         allFilenames.push(filenames);
       }
     });
@@ -197,8 +199,8 @@ module.exports.replaceFilenames = (req, res) => {
 
 
     fs.rename(
-      file.oldFilename,
-      file.newFilename,
+      `${file.folder}${file.oldFilename}${file.fileType}`,
+      `${file.folder}${file.newFilename}${file.fileType}`,
       function (err) {
         if (err) throw err;
       },

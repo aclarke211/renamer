@@ -3,7 +3,7 @@ var genreType = 'video';
 
 function addListeners(content) {
   appContent = content;
-  // console.log(appContent);
+
   // Select box for 'Source Directory'
   $('#srcDirectory-frequent').change(function () {
     $('.srcDirectory-path').val(
@@ -187,8 +187,6 @@ function sendData(path, contentToPass, allFiles) {
 
     success: function (data) {
       // console.log('Data successfully sent');
-      // console.log('Returned Content: ');
-      // console.log(data);
 
       if (path === appContent.paths.findFiles) {
         const files = {};
