@@ -59,12 +59,34 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
         </div>
       </div>
 
-      <div class="sort-files__container accordion active">
+      <div class="sort-files__container accordion">
         <h3 class="${name}-subtitle subtitle">${content.data.sortFiles.subtitle}</h3>
         <div class="btns__container">
           <div class="sort-files__btn btn">${content.data.sortFiles.btns.sortFiles.text}</div>
         </div>
       </div>
+
+      <div class="find-replace__container accordion active">
+      <h3 class="${name}-subtitle subtitle">${content.data.findAndReplace.subtitle}</h3>
+
+      <div class="fields__container">
+      <div class="field">
+        <label for="${name}-file-to-find" class="${name}-text">${content.data.findAndReplace.fields.find.label}</label>
+        <input id="${name}-file-to-find" class="${name}-file-to-find" type="text"
+        placeholder="${content.data.findAndReplace.fields.find.placeholder}" value="">
+      </div>
+
+      <div class="field">
+        <label for="${name}-new-name" class="${name}-text">${content.data.findAndReplace.fields.replace.label}</label>
+        <input id="${name}-new-name" class="${name}-new-name" type="text"
+        placeholder="${content.data.findAndReplace.fields.replace.placeholder}" value="">
+      </div>
+    </div>
+
+      <div class="btns__container">
+        <div class="find-replace__btn btn">${content.data.findAndReplace.btns.findAndReplace.text}</div>
+      </div>
+    </div>
 
     </div>
   `;

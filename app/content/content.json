@@ -82,6 +82,24 @@
               "text": "Search Source Directory"
             }
           }
+        },
+        "findAndReplace": {
+          "subtitle": "Find / Replace",
+          "fields": {
+            "find": {
+              "label": "To Find",
+              "placeholder": "Specify a string to find..."
+            },
+            "replace": {
+              "label": "To Replace",
+              "placeholder": "Replace with..."
+            }
+          },
+          "btns": {
+            "findAndReplace": {
+              "text": "Replace"
+            }
+          }
         }
       }
     },

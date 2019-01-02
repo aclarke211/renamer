@@ -41,6 +41,12 @@ function addListeners(content) {
       sendData(content.paths.sortFiles, dirs);
     }
   });
+
+  $('.find-replace__btn').click(function() {
+    if (validateForms('.find-replace__container')) {
+      console.log('Find / Replace button clicked.')
+    }
+  });
 }
 
 function prepareDataToSend(path, names, type, form) {
