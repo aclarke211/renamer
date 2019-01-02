@@ -25,6 +25,9 @@
 
 ## Bugs
 
+- When using 'Find and Replace', folder name also gets renamed (i.e. folder/^^Art to folder/Art) which may not exist.
+  - Can prevent this manually by adding quotes around word to find.
+
 - When reverting files, the message saying 'Revert Complete' (in modal), appears before all files have actually been reverted.
 
 - Possibly, still not always deleted parent folder (on Mac) after reverting.
