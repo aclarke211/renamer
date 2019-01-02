@@ -50,10 +50,7 @@ function addListeners(content) {
         replace: $('.filesToConv-file-to-replace').val() || 'No File to Replace provided.'
       };
 
-      // sendData(content.paths.findAndReplace, strings);
-
-      console.log('Find / Replace button clicked.')
-      // console.log(strings);
+      sendData(content.paths.findAndReplace, strings);
     }
   });
 }
@@ -237,6 +234,11 @@ function sendData(path, contentToPass, allFiles) {
         console.log(data.files);
 
         sendData(appContent.paths.findFiles, createContent(data.files, genreType));
+      }
+
+      if (path === appContent.paths.findAndReplace) {
+        console.log(data);
+        console.log("Found and Replaced strings.");
       }
     },
 

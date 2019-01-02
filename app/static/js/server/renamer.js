@@ -154,3 +154,11 @@ module.exports.sortFiles = (req, res) => {
   res.json(filesInFolder);
 
 };
+
+module.exports.findAndReplace = (req, res) => {
+  let strings = req.body;
+
+  console.log(strings);
+
+  res.json(strings);
+};
