@@ -89,13 +89,19 @@
             overflow-y: auto;
             overflow-x: hidden;
             width: 100%;
+          }
 
-            .no-files-msg {
-              color: royalblue;
-              font-weight: 600;
-              font-size: 1rem;
-              text-align: center;
-            }
+        }
+
+        .no-files-msg {
+          color: royalblue;
+          font-weight: 600;
+          font-size: 1rem;
+          text-align: center;
+
+          span {
+            font-weight: 600;
+            color: red;
           }
         }
 
@@ -119,6 +125,7 @@
           padding: .5rem 1rem;
           margin: .5rem auto;
           width: 82.25%;
+          word-break: break-all;
 
           .current_filename {
             font-weight: 600;

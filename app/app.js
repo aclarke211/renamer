@@ -28,6 +28,7 @@ express()
   .post("/del-folders", Renamer.delFolders)
   .post("/sort-files", Renamer.sortFiles)
   .post("/find-and-replace", Renamer.findAndReplace)
+  .post("/replaceFilenames", Renamer.replaceFilenames)
   .listen(PORT, () => {
     console.log(colors.black.bgGreen('RENAMER running...'));
     console.log(colors.yellow('Listening on:'));

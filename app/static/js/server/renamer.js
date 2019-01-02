@@ -171,33 +171,46 @@ module.exports.findAndReplace = (req, res) => {
     files.forEach((file) => {
 
       const filenames = {};
-      filenames.old = file;
-      filenames.new = '';
+      filenames.oldFilename = file;
+      filenames.newFilename = '';
 
       if (file.indexOf(values.strings.find) !== -1) {
         newFilename = file.replace(values.strings.find, values.strings.replace);
         // console.log(colors.bgGreen(file));
-        filenames.new = newFilename;
+        filenames.newFilename = newFilename;
+        allFilenames.push(filenames);
       }
-      allFilenames.push(filenames);
     });
 
     console.log(colors.cyan('New Filenames:'));
     console.log(allFilenames);
 
-    replaceFilenames(allFilenames);
 
     res.json(allFilenames);
   });
 };
 
-function replaceFilenames(filenames) {
-  filenames.forEach((file) => {
-    if (file.new !== '') {
-      console.log(colors.bgBlue('GOING TO REPLACE:'));
-      console.log(colors.bgMagenta(file.old));
-      console.log('with');
-      console.log(colors.green(file.new));
-    }
+module.exports.replaceFilenames = (req, res) => {
+  const files = req.body;
+
+  files.forEach((file) => {
+
+
+    fs.rename(
+      file.oldFilename,
+      file.newFilename,
+      function (err) {
+        if (err) throw err;
+      },
+    );
+
+
+    console.log(colors.bgBlue('REPLACED'));
+    console.log(colors.bgMagenta(file.oldFilename));
+    console.log('with');
+    console.log(colors.bgBlue(file.newFilename));
   });
-}
+
+
+  res.json(files);
+};

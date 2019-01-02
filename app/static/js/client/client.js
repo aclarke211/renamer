@@ -241,7 +241,25 @@ function sendData(path, contentToPass, allFiles) {
 
       if (path === appContent.paths.findAndReplace) {
         console.log(data);
-        console.log("Found and Replaced strings.");
+
+        $.when(
+        $.getScript('./app/static/js/modules/modal.js', function() {
+          showModal(data, appContent, 'FindAndReplace');
+        })).then(function() {
+          $(`.${appContent.modules.modal.findAndReplaceStatus.btns.replaceFiles.className}`).click(function() {
+            sendData(appContent.paths.replaceFilenames, data);
+          });
+        });
+
+        console.log("Found strings to replace.");
+      }
+
+      if (path === appContent.paths.replaceFilenames) {
+        $('.returned-files__container').remove();
+        $('.modal__inner .btns__container').remove();
+        $('.modal-title').text('Filenames Replaced!');
+
+        console.log('Replaced filenames.')
       }
     },
 

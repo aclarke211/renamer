@@ -1,33 +1,60 @@
-function showModal(files, content) {
+function showModal(files, content, modalType) {
   closeModal();
 
-  const modal = `
-  <div class="modal__outer">
-    <div class="modal__container">
-      <div class="modal__inner">
-        <div class="modal__close">${content.modules.modal.findStatus.btns.closeBtn.text}</div>
-        <h3 class="modal-title">${content.modules.modal.findStatus.title}</h3>
-        <div class="returned-files__container">
-        <div class="found-files files">
-          <h4 class="status-title">${content.modules.modal.findStatus.files.found.title}</h4>
-          <div class="files-collection"></div>
-          </div>
-          <div class="missing-files files">
-          <h4 class="status-title">${content.modules.modal.findStatus.files.missing.title}</h4>
-          <div class="files-collection"></div>
-          </div>
+  let modal = ``;
+
+  if (modalType !== undefined) {
+    if (modalType === 'FindAndReplace') {
+      modal = `
+      <div class="modal__outer">
+      <div class="modal__container">
+        <div class="modal__inner">
+          <div class="modal__close">${content.modules.modal.findStatus.btns.closeBtn.text}</div>
+          <h3 class="modal-title">${content.modules.modal.findAndReplaceStatus.title}</h3>
+          <div class="returned-files__container"></div>
+          <div class="btns__container">
+            <div class="${content.modules.modal.findAndReplaceStatus.btns.replaceFiles.className} btn">${content.modules.modal.findAndReplaceStatus.btns.replaceFiles.text}</div>
         </div>
-        <div class="btns__container">
-          <div class="${content.modules.modal.findStatus.btns.renameFilesBtn.className} btn">${content.modules.modal.findStatus.btns.renameFilesBtn.text}</div>
         </div>
       </div>
     </div>
+      `;
+    };
+  } else {
+    modal = `
+    <div class="modal__outer">
+      <div class="modal__container">
+        <div class="modal__inner">
+          <div class="modal__close">${content.modules.modal.findStatus.btns.closeBtn.text}</div>
+          <h3 class="modal-title">${content.modules.modal.findStatus.title}</h3>
+          <div class="returned-files__container">
+          <div class="found-files files">
+            <h4 class="status-title">${content.modules.modal.findStatus.files.found.title}</h4>
+            <div class="files-collection"></div>
+            </div>
+            <div class="missing-files files">
+            <h4 class="status-title">${content.modules.modal.findStatus.files.missing.title}</h4>
+            <div class="files-collection"></div>
+            </div>
+          </div>
+          <div class="btns__container">
+            <div class="${content.modules.modal.findStatus.btns.renameFilesBtn.className} btn">${content.modules.modal.findStatus.btns.renameFilesBtn.text}</div>
+          </div>
+        </div>
+      </div>
 
-  </div>
-  `;
+    </div>
+    `;
+  }
 
   $('.main__container').append(modal);
-  sortFiles(files);
+  if (modalType === undefined) {
+    sortFiles(files);
+  }
+
+  if (modalType === 'FindAndReplace') {
+    showFilesToReplaceName(files);
+  }
 
   $('.modal__outer')
     .click(() => {
@@ -42,8 +69,10 @@ function showModal(files, content) {
     closeModal();
   });
 
-  if (files.foundFiles.length >= 1 && files.missingFiles.length <= 0) {
-    $(`.${content.modules.modal.findStatus.btns.renameFilesBtn.className}`).addClass('active');
+  if (modalType === undefined) {
+    if (files.foundFiles.length >= 1 && files.missingFiles.length <= 0) {
+      $(`.${content.modules.modal.findStatus.btns.renameFilesBtn.className}`).addClass('active');
+    }
   }
 }
 
@@ -68,7 +97,13 @@ function createFileElem(file, parentElem) {
     if ($(this).text() === '') {
       $(this).remove();
     }
-  })
+  });
+
+  $('.new-folder').each(function() {
+    if ($(this).text() === '') {
+      $(this).remove();
+    }
+  });
 }
 
 function sortFiles(files) {
@@ -181,4 +216,25 @@ function revertComplete(content) {
   `;
 
   $('.modal__inner .btns__container').prepend(delFoldersBtn);
+}
+
+function showFilesToReplaceName(files) {
+  console.log('FILES NAMES');
+  console.log(files);
+
+
+  if (files.length <= 0) {
+    $('.returned-files__container').append(`<p class="no-files-msg">No files contain <span>${$('.filesToConv-file-to-find').val()}</span></p>`);
+    $('.modal__inner .btn').remove();
+  } else {
+      files.forEach((file) => {
+        file.fileType = '';
+        file.folder = '';
+
+        createFileElem(file, $('.returned-files__container'));
+      });
+  }
+
+
+
 }

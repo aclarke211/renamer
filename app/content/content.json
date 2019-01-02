@@ -8,7 +8,8 @@
     "revertFiles": "/revert-files",
     "delFolders": "/del-folders",
     "sortFiles": "/sort-files",
-    "findAndReplace": "/find-and-replace"
+    "findAndReplace": "/find-and-replace",
+    "replaceFilenames": "/replaceFilenames"
   },
   "components": [{
       "componentName": "header",
@@ -98,7 +99,7 @@
           },
           "btns": {
             "findAndReplace": {
-              "text": "Replace"
+              "text": "Find Matches"
             }
           }
         }
@@ -139,6 +140,15 @@
       },
       "revertedStatus": {
         "title": "Files Reverted"
+      },
+      "findAndReplaceStatus": {
+        "title": "Replace File Names",
+        "btns": {
+          "replaceFiles": {
+            "className": "replace-files-btn",
+            "text": "Replace Files"
+          }
+        }
       }
     }
   }
