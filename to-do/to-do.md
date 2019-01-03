@@ -24,3 +24,8 @@
 - When reverting files, the message saying 'Revert Complete' (in modal), appears before all files have actually been reverted.
 
 - Possibly, still not always deleted parent folder (on Mac) after reverting.
+
+- (Found On: Windows) Folder name sometimes has comma and a space at the end and does not seem to exist, but still shows in Windows Explorer (the file cannot be deleted, as it cannot be found.)
+
+  - i.e.
+    ^^Folder Name,
