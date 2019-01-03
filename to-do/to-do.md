@@ -4,7 +4,7 @@
 
 ## Steps
 
-- Find a string in all found files and replace with a new string.
+- Set max numberof files to be processed at 200.
 
 - Style.
 
