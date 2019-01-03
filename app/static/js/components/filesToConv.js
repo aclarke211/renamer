@@ -59,14 +59,14 @@ oldFilename_04	newFilename_04 ['Action' - 'Adventure', 'Family']</textarea>
         </div>
       </div>
 
-      <div class="sort-files__container accordion">
+      <div class="sort-files__container accordion active">
         <h3 class="${name}-subtitle subtitle">${content.data.sortFiles.subtitle}</h3>
         <div class="btns__container">
           <div class="sort-files__btn btn">${content.data.sortFiles.btns.sortFiles.text}</div>
         </div>
       </div>
 
-      <div class="find-replace__container accordion active">
+      <div class="find-replace__container accordion">
       <h3 class="${name}-subtitle subtitle">${content.data.findAndReplace.subtitle}</h3>
 
       <div class="fields__container">
