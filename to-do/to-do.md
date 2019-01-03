@@ -1,21 +1,23 @@
 # To-Do [Renamer]
 
-## Packages to Install
-
 ## Steps
 
-- Set max numberof files to be processed at 200.
+- Set max numberof files to be processed at **150**.
+
+- Confirm option when clicking **revert button**
 
 - Style.
 
 ## Nice to Have
 
+- Small Icon for multi files container, when hovered show **help tool-top** to identify how to copy files in from Excel.
+
+- Refactor server method to take a **payload object** which can contain multiple types of data.
+
 - Generate video thumbnail (.gif) for found files.
 
   - Thumbnails will be stored in a directory within the app.
   - This directory will need to be cleaned on each run to remove old/unneeded thumbnails.
-
-- Small Icon for multi files container, when hovered show help tool-top to identify how to copy files in from Excel.
 
 ## Bugs
 
