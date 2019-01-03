@@ -2,7 +2,7 @@
 
 ## Steps
 
-- Set max numberof files to be processed at **150**.
+- Set max numberof files to be processed at **100**.
 
 - Confirm option when clicking **revert button**
 
