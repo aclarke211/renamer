@@ -72,7 +72,7 @@ function createContent(names, type) {
     case 'video':
       fileTypes = {
         mainType: 'mp4',
-        types: ['m4a', 'avi', 'wmv', 'mkv', 'mov', 'mpg', 'rm', 'flv'],
+        types: ['m4a', 'avi', 'wmv', 'mkv', 'mov', 'mpg', 'rm', 'flv', 'm4v'],
       };
       break
   }
