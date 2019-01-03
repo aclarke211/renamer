@@ -160,7 +160,7 @@ module.exports.findAndReplace = (req, res) => {
 
   const filesToIgnore = ['*.exe', '.*'];
 
-  recursive(values.srcDir, filesToIgnore, function(err, files) {
+  recursive(values.srcDir, filesToIgnore, function (err, files) {
     const allFilenames = [];
 
     files.forEach((file) => {
@@ -169,15 +169,15 @@ module.exports.findAndReplace = (req, res) => {
 
       if (file.indexOf(values.strings.find) !== -1) {
         fileType = file.substr(file.lastIndexOf('.'));
-        oldFilenameNameOnly = file.substr(file.lastIndexOf('/')+1).replace(fileType, '');
+        oldFilenameNameOnly = file.substr(file.lastIndexOf('/') + 1).replace(fileType, '');
 
-        const newFilename = file.substr(file.lastIndexOf('/')+1).replace(fileType, '');
+        const newFilename = file.substr(file.lastIndexOf('/') + 1).replace(fileType, '');
         const newFilenameNameOnly = newFilename.replace(values.strings.find, values.strings.replace);
 
         // Set data for each file
         filenames.newFilename = newFilenameNameOnly;
         filenames.oldFilename = oldFilenameNameOnly;
-        filenames.folder = file.substr(0, file.lastIndexOf('/')+1);
+        filenames.folder = file.substr(0, file.lastIndexOf('/') + 1);
         filenames.fileType = fileType;
 
         allFilenames.push(filenames);
