@@ -42,7 +42,7 @@ function addListeners(content) {
     }
   });
 
-  $('.find-replace__btn').click(function() {
+  $('.find-replace__btn').click(function () {
     if (validateForms('.find-replace__container')) {
 
       const values = {
@@ -241,10 +241,10 @@ function sendData(path, contentToPass, allFiles) {
         console.log(data);
 
         $.when(
-        $.getScript('./app/static/js/modules/modal.js', function() {
-          showModal(data, appContent, 'FindAndReplace');
-        })).then(function() {
-          $(`.${appContent.modules.modal.findAndReplaceStatus.btns.replaceFiles.className}`).click(function() {
+          $.getScript('./app/static/js/modules/modal.js', function () {
+            showModal(data, appContent, 'FindAndReplace');
+          })).then(function () {
+          $(`.${appContent.modules.modal.findAndReplaceStatus.btns.replaceFiles.className}`).click(function () {
             sendData(appContent.paths.replaceFilenames, data);
           });
         });
@@ -291,10 +291,10 @@ function createResultsModal(files) {
                   total: files.foundFiles.length
                 };
                 sendData(appContent.paths.renameFiles, files.foundFiles[index], files.foundFiles)
-              }, i * 1000);
+              }, i * appContent.defaults.waitTime);
             })(i);
           }
-        }, 1000);
+        }, appContent.defaults.waitTime);
       }
 
     });
