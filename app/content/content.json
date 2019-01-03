@@ -1,7 +1,7 @@
 {
   "defaults": {
     "folderName": "_re",
-    "waitTime": "100"
+    "waitTime": "150"
   },
   "paths": {
     "findFiles": "/find-file",
