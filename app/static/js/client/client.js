@@ -101,8 +101,8 @@ function createContent(names, type) {
 function findPrimaryFolder(filename, defaultFolder) {
   if (filename !== undefined && filename.indexOf('[') !== -1 && filename.indexOf(']') !== -1) {
     const firstSet = filename.substring(
-      filename.indexOf("['") + 2,
-      filename.indexOf("']")
+      filename.indexOf("[\'") + 2,
+      filename.indexOf("\']")
     );
 
     let folderName = firstSet;
