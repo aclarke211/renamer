@@ -23,11 +23,11 @@
 
 - When a folder is named, if the filename contains " **'** " in a word (i.e. **Renamer's Example**), the returned folder name stops before the quote mark, so the folder name would be set as **Renamer**. <br> ***[ - Has possibly been fixed by escaping the single quote mark when determining a folders name. ]***
 
-- When reverting files, the message saying 'Revert Complete' (in modal), appears before all files have actually been reverted.
-
-- Possibly, still not always deleted parent folder (on Mac) after reverting.
-
-- (Found On: Windows) Folder name sometimes has comma and a space at the end and does not seem to exist, but still shows in Windows Explorer (the file cannot be deleted, as it cannot be found.)
+- <u>**[POTENTIALLY LINKED TO THE ABOVE ISSUE]**</u> - (Found On: Windows) Folder name sometimes has comma and a space at the end and does not seem to exist, but still shows in Windows Explorer (the file cannot be deleted, as it cannot be found.)
 
   - i.e.
     ^^Folder Name,
+
+- When reverting files, the message saying 'Revert Complete' (in modal), appears before all files have actually been reverted.
+
+- Possibly, still not always deleted parent folder (on Mac) after reverting.
