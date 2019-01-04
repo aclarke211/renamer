@@ -21,7 +21,7 @@
 
 ## Bugs
 
-- When a folder is named, if the filename contains " **'** " in a word (i.e. **Renamer's Example**), the returned folder name stops before the quote mark, so the folder name would be set as **Renamer**.
+- When a folder is named, if the filename contains " **'** " in a word (i.e. **Renamer's Example**), the returned folder name stops before the quote mark, so the folder name would be set as **Renamer**. <br> ***[ - Has possibly been fixed by escaping the single quote mark when determining a folders name. ]***
 
 - When reverting files, the message saying 'Revert Complete' (in modal), appears before all files have actually been reverted.
 
