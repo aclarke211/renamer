@@ -108,8 +108,13 @@ function findPrimaryFolder(filename, defaultFolder) {
     let folderName = firstSet;
 
     if (firstSet.indexOf(`'`) !== -1) {
-      unvalidatedFolderName = firstSet.substring(0, firstSet.indexOf(`'`, 1)).trim();
-      folderName = unvalidatedFolderName.substring(0, unvalidatedFolderName.length - 1);
+      folderName = firstSet.substring(0, firstSet.indexOf(`'`, 1)).trim();
+      var trailingCharsToRemove = [',', '-', '_', '(', ')', '{', '}', ';'];
+      trailingCharsToRemove.forEach((char) => {
+        if (folderName.slice(-1) === char) {
+          folderName = folderName.substring(0, folderName.length - 1).trim();
+        }
+      });
     }
 
     return `${defaultFolder}/${folderName}`;
