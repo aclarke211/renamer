@@ -108,7 +108,8 @@ function findPrimaryFolder(filename, defaultFolder) {
     let folderName = firstSet;
 
     if (firstSet.indexOf(`'`) !== -1) {
-      folderName = firstSet.substring(0, firstSet.indexOf(`'`, 1));
+      unvalidatedFolderName = firstSet.substring(0, firstSet.indexOf(`'`, 1)).trim();
+      folderName = unvalidatedFolderName.substring(0, unvalidatedFolderName.length - 1);
     }
 
     return `${defaultFolder}/${folderName}`;
