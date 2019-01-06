@@ -10,6 +10,10 @@
 
 ## Nice to Have
 
+- Update **Modal** to have CreateModal(), UpdateModal()/AddToModal() methods etc.
+
+- Update method in **main.js** to use Async function from CodePen example I wrote last week.
+
 - Small Icon for multi files container, when hovered show **help tool-top** to identify how to copy files in from Excel.
 
 - Refactor server method to take a **payload object** which can contain multiple types of data.
