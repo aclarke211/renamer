@@ -4,6 +4,8 @@
 
 - Set max numberof files to be processed at **100**.
 
+- Ability to search a second source directory if there are missing files after searching the first.
+
 - Confirm option when clicking **revert button**
 
 - Style.
