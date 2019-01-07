@@ -4,7 +4,8 @@
 
 - Set max numberof files to be processed at **100**.
 
-- Ability to search a second source directory if there are missing files after searching the first.
+- Radio buttons for file type in options container
+  (default to video option for now as they are the only file types supported).
 
 - Confirm option when clicking **revert button**
 
@@ -16,7 +17,8 @@
 
 - Update method in **main.js** to use Async function from CodePen example I wrote last week.
 
-- Small Icon for multi files container, when hovered show **help tool-top** to identify how to copy files in from Excel.
+- Small Icon for multi files container, when hovered show **help tool-top** to identify how to
+  copy files in from Excel.
 
 - Refactor server method to take a **payload object** which can contain multiple types of data.
 
@@ -27,6 +29,7 @@
 
 ## Bugs
 
-- When reverting files, the message saying 'Revert Complete' (in modal), appears before all files have actually been reverted.
+- When reverting files, the message saying 'Revert Complete' (in modal), appears before all files
+  have actually been reverted.
 
 - Possibly, still not always deleted parent folder (on Mac) after reverting.
