@@ -32,7 +32,6 @@ function addListeners(content) {
   });
 
   $('.sort-files__btn').click(function () {
-    console.log('Sort Files Button clicked.');
     const dirs = {
       toSearch: $('.srcDirectory-path').val() || 'No Source Directory supplied.'
     };
@@ -192,8 +191,6 @@ function sendData(path, contentToPass, allFiles) {
     },
 
     success: function (data) {
-      // console.log('Data successfully sent');
-
       if (path === appContent.paths.findFiles) {
         const files = {};
         files.foundFiles = data.files.filter(file => file.foundStatus === true);

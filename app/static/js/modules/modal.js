@@ -89,8 +89,7 @@ function createFileElem(file, parentElem) {
     <p class="new-folder">${file.folder}</p>
   </div>
 `;
-  // console.log('CREATE FILE');
-  // console.log(file);
+
   $(parentElem).append(fileElem);
 
   $('.file-type').each(function () {
