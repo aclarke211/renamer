@@ -29,6 +29,8 @@
 
 ## Bugs
 
+- If a folder name as a quote mark in the word, i.e. Word's, then the folder name is calculated as just 'Word' as it is being trimmed to between the first and second occurances of the " **'** " <sup>(single quote)</sup> mark.
+
 - When reverting files, the message saying 'Revert Complete' (in modal), appears before all files
   have actually been reverted.
 
