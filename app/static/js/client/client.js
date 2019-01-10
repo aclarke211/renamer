@@ -116,7 +116,7 @@ function findPrimaryFolder(filename, defaultFolder) {
       });
     }
 
-    return `${defaultFolder}/${folderName}`;
+    return `${defaultFolder}/${folderName.trim()}`;
   } else {
     return defaultFolder;
   }
