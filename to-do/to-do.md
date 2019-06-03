@@ -2,6 +2,8 @@
 
 ## Steps
 
+- Rename files seems to rename the folder aswell?
+
 - Set max numberof files to be processed at **100**.
 
 - Radio buttons for file type in options container
@@ -34,4 +36,4 @@
 - When reverting files, the message saying 'Revert Complete' (in modal), appears before all files
   have actually been reverted.
 
-- Possibly, still not always deleted parent folder (on Mac) after reverting.
+- Possibly, still not always deleting parent folder (on Mac) after reverting.
