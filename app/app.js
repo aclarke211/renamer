@@ -4,8 +4,9 @@ const colors = require('colors');
 const compileSass = require('express-compile-sass');
 const root = process.cwd();
 const bodyParser = require('body-parser');
+const config = require('../config/default.json');
 
-const PORT = process.env.PORT || 5555;
+const PORT = process.env.PORT || config.port.local || 5555;
 const Renamer = require('./static/js/server/renamer');
 
 express()
