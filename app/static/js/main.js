@@ -1,4 +1,4 @@
-console.log('Renamer [v1.0.0]');
+console.log('Renamer running.');
 
 const $appContainer = $('.components__container');
 
