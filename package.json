@@ -1,13 +1,15 @@
 {
   "name": "projects",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "app": "nodemon app/app && opn http://localhost:5555",
     "start": "npm run app",
-    "stop": "killall node"
+    "stop": "killall node",
+    "pre-release": "npm version patch && git push --tags",
+    "release:heroku": "npm run pre-release && git push heroku master"
   },
   "author": "",
   "license": "ISC",
