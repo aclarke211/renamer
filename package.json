@@ -9,7 +9,7 @@
     "start": "npm run app",
     "stop": "killall node",
     "pre-release": "npm version patch && git push && git push --tags",
-    "release:heroku": "npm run pre-release && git push heroku master"
+    "release": "npm run pre-release"
   },
   "author": "",
   "license": "ISC",
