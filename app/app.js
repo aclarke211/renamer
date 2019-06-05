@@ -5,6 +5,7 @@ const compileSass = require('express-compile-sass');
 const root = process.cwd();
 const bodyParser = require('body-parser');
 const config = require('../config/default.json');
+const pjson = require('../package.json');
 
 const PORT = process.env.PORT || config.port.local || 5555;
 const Renamer = require('./static/js/server/renamer');
@@ -23,6 +24,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('index'))
+  .get('/getPackageJson', (req, res) => { res.json(pjson) })
   .post("/find-file", Renamer.findFile)
   .post("/rename-file", Renamer.renameFile)
   .post("/revert-files", Renamer.revertFiles)
