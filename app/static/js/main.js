@@ -1,4 +1,6 @@
-console.log('Renamer running.');
+$.get('/getPackageJson', (pjson) => {
+  console.log(`${pjson.name} v${pjson.version}`);
+});
 
 const $appContainer = $('.components__container');
 
