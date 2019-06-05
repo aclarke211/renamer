@@ -9,7 +9,7 @@
     "start": "npm run app",
     "stop": "killall node",
     "pre-release": "npm version patch && git push && git push --tags",
-    "release": "npm run pre-release"
+    "release": "npm run pre-release && echo \"There is currently no platform to release on.\""
   },
   "author": "",
   "license": "ISC",
