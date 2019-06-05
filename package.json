@@ -1,7 +1,7 @@
 {
   "name": "renamer",
   "version": "1.0.9",
-  "description": "",
+  "description": "Rename files on your PC. Built mainly using Node.js & Express.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
