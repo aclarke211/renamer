@@ -1,8 +1,18 @@
 .header__container {
   @include flex;
+  position: relative;
 
   margin: 1rem 0 2rem;
   padding: 1rem;
+
+  .project-version {
+    color: silver;
+    font-size: .85rem;
+    position: absolute;
+    font-style: italic;
+    top: 0;
+    right: 0;
+  }
 
   .header-text {
     font-size: 1.5rem;
