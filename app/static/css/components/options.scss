@@ -1,7 +1,6 @@
 .options {
   &__container {
     @include flex;
-    border: 1px solid slategrey;
     padding: 2rem 1rem;
     margin: 1rem auto;
   }
