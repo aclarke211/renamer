@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "app": "nodemon app/app && opn http://localhost:5555",
+    "app": "opn http://localhost:5555 && nodemon app/app",
     "start": "npm run app",
     "stop": "killall node",
     "refresh:node_modules": "rm -fr node_modules && npm i && npm audit && npm audit fix",
