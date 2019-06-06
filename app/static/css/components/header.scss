@@ -1,22 +1,28 @@
 .header__container {
   @include flex;
   position: relative;
-
-  margin: 1rem 0 2rem;
+  // margin: 1rem 0 2rem;
   padding: 1rem;
+  background-color: lightseagreen;
+  box-shadow: 0 3px 5px 0 #808080;
 
   .project-version {
-    color: silver;
+    $color: ghostwhite;
+
+    color: $color;
     font-size: .85rem;
     position: absolute;
     font-style: italic;
-    top: 0;
-    right: .5rem;
+    top: .75rem;
+    right: 1rem;
   }
 
   .header-text {
-    font-size: 1.5rem;
-    border: 3px solid black;
+    $primaryColor: ghostwhite;
+
+    font-size: 1.25rem;
+    border: 3px solid $primaryColor;
+    color: $primaryColor;
     padding: .75rem 2rem;
   }
 }
